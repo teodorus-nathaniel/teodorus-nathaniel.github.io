@@ -257,7 +257,7 @@ main section {
 }
 
 footer {
-	background-image: linear-gradient(to bottom, #18101b 90%, #0c0c0c);
+	background-image: linear-gradient(to bottom, #1d1320 90%, #0c0c0c);
 	color: white;
 	display: flex;
 	justify-content: space-between;
