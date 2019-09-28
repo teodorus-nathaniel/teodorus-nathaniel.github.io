@@ -82,6 +82,7 @@ main section {
 	min-height: 100vh;
 }
 
+/* HOME */
 #home {
 	width: 100%;
 }
@@ -154,6 +155,7 @@ main section {
 	background-image: linear-gradient(to bottom, #18101b 90%, #0c0c0c);
 }
 
+/* PROFILE */
 #profile .profile-container {
 	display: flex;
 	justify-content: space-between;
@@ -190,6 +192,7 @@ main section {
 	text-align: center;
 }
 
+/* EXPERIENCES */
 #experiences .experience-container {
 	display: flex;
 	justify-content: center;
