@@ -1,5 +1,5 @@
 class Point {
-	constructor () {
+	constructor() {
 		this.x = Math.random() * window.innerWidth;
 		this.y = Math.random() * window.innerHeight;
 		this.veloX = Math.random() * 0.5 * (Math.random() < 0.5 ? -1 : 1);
@@ -7,7 +7,7 @@ class Point {
 		this.opacity = 0;
 	}
 
-	move () {
+	move() {
 		const boundary = 50;
 		this.x += this.veloX;
 		this.y += this.veloY;
@@ -23,16 +23,16 @@ class Point {
 		}
 	}
 
-	fadeOut () {
+	fadeOut() {
 		this.opacity -= 0.01;
 	}
 
-	fadeIn () {
+	fadeIn() {
 		this.opacity += 0.01;
 	}
 }
 
-function isInRadius (point){
+function isInRadius(point) {
 	const radius = 100;
 	return (
 		point.x < mousePos.x + radius &&
@@ -42,16 +42,20 @@ function isInRadius (point){
 	);
 }
 
-function animate (){
+function getDistancePercentage(point) {
+	return Math.sqrt(Math.pow(point.x - mousePos.x, 2) + Math.pow(point.y - mousePos.y, 2));
+}
+
+function animate() {
 	ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
 	const removedParticles = [];
-	points.forEach(point => {
+	points.forEach((point) => {
 		ctx.fillStyle = `rgba(230, 230, 230, ${point.opacity})`;
 		ctx.beginPath();
 		ctx.arc(point.x, point.y, pointSize, 0, Math.PI * 2, true);
 		ctx.fill();
 		if (isInRadius(point)) {
-			ctx.strokeStyle = 'rgba(230, 230, 230, .5)';
+			ctx.strokeStyle = `rgba(230, 230, 230, ${(100 - getDistancePercentage(point)) / 100})`;
 			ctx.moveTo(point.x, point.y);
 			ctx.lineTo(mousePos.x, mousePos.y);
 			ctx.stroke();
@@ -60,7 +64,7 @@ function animate (){
 		point.move();
 		if (point.opacity < 0) removedParticles.push(point);
 	});
-	points = points.filter(point => !removedParticles.includes(point));
+	points = points.filter((point) => !removedParticles.includes(point));
 	points.push(...Array.from({ length: removedParticles.length }).map(() => new Point()));
 	window.requestAnimationFrame(animate);
 }
@@ -80,7 +84,7 @@ window.addEventListener('resize', () => {
 	canvas.width = window.innerWidth;
 	canvas.height = window.innerHeight;
 });
-window.addEventListener('mousemove', e => {
+window.addEventListener('mousemove', (e) => {
 	const x = e.clientX;
 	const y = e.clientY + window.scrollY;
 
