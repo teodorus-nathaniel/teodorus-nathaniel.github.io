@@ -7,7 +7,7 @@
 	font-weight: 400;
 }
 body {
-	font-family: 'Gayathri', sans-serif;
+	font-family: 'Dosis', sans-serif;
 	overflow-x: hidden;
 	min-height: 100vh;
 	letter-spacing: 2px;
@@ -158,7 +158,7 @@ main section {
 }
 .common-section:nth-child(odd) {
 	/* background-image: linear-gradient(to bottom, #18101b 90%, #0c0c0c); */
-	background-image: url('./../img/wallpapersden.com_fantasy-forest-city_2560x1440.jpg');
+	background-image: url('./../img/wallpapersden.com_fantasy-forest-city_2560x1440.jpg	');
 	background-position: center;
 	background-size: cover;
 	background-attachment: fixed;
