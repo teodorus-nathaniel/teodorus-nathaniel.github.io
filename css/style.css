@@ -11,6 +11,7 @@ body {
 	overflow-x: hidden;
 	min-height: 100vh;
 	letter-spacing: 2px;
+	background-color: #0c0c0c;
 }
 .text {
 	line-height: 1.8em;
@@ -157,7 +158,6 @@ main section {
 	background-image: linear-gradient(to bottom, #0c0c0c 90%, #18101b);
 }
 .common-section:nth-child(odd) {
-	/* background-image: linear-gradient(to bottom, #18101b 90%, #0c0c0c); */
 	background-color: #18101b;
 	background-image: url('./../img/wallpapersden.com_fantasy-forest-city_2560x1440.jpg	');
 	background-position: center;
