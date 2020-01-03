@@ -16,19 +16,19 @@
 
     <nav>
         <ul>
-            <li id="profile-btn">
+            <li id="profile-btn" tabindex="2">
                 <span>Profile</span>
                 <i class="fa fa-user" aria-hidden="true"></i>
             </li>
-            <li id="experiences-btn">
+            <li id="experiences-btn" tabindex="2">
                 <span>Experiences</span>
                 <i class="fa fa-graduation-cap" aria-hidden="true"></i>
             </li>
-            <li id="skills-btn">
+            <li id="skills-btn" tabindex="2">
                 <span>Skills</span>
                 <i class="fa fa-cogs" aria-hidden="true"></i>
             </li>
-            <li id="about-btn">
+            <li id="about-btn" tabindex="2">
                 <span>About</span>
                 <i class="fa fa-info" aria-hidden="true"></i>
             </li>
@@ -37,7 +37,7 @@
 
     <main>
         <section id="home">
-            <div class="background-image"></div>
+            <div class="background-image" id="home-background"></div>
             <canvas id="canvas"></canvas>
             <div class="text">
                 <!-- <div class="photo"></div> -->
@@ -51,12 +51,11 @@
                 <h1>-- Profile --</h1>
             </div>
             <ul class="profile-container">
-                <li><span>Name: </span><span>Teodorus Nathaniel Kurniawan</span></li>
-                <li><span>Age: </span><span>19 years old</span></li>
-                <li><span>Job: </span><span>Student and Lab Instructor in Binus University</span></li>
-                <li><span>Line: </span><span>nathaniel.kurniawan</span>
-                <li><span>Email: </span><span><span>nathankurnia26@gmail.com</span> <i
-                            class="fa fa-envelope"></i></span></li>
+                <li class="scroll-to-view"><span>Name: </span><span>Teodorus Nathaniel Kurniawan</span></li>
+                <li class="scroll-to-view"><span>Age: </span><span>19 years old</span></li>
+                <li class="scroll-to-view"><span>Job: </span><span>Student and Lab Instructor in Binus University</span></li>
+                <li class="scroll-to-view"><span>Line: </span><span>nathaniel.kurniawan</span>
+                <li class="scroll-to-view"><span>Email: </span><span><span>nathankurnia26@gmail.com</span><i class="fa fa-envelope"></i></span></li>
                 </li>
             </ul>
             <div>
@@ -75,7 +74,7 @@
             </div>
             <div class="experience-container">
                 <div class="experience-item-container">
-                    <div class="experience-item">
+                    <div class="experience-item scroll-to-view">
                         <div class="image-container" style="background-image: url(./img/bluejack.jpg)"></div>
                         <div class="description">
                             <h2>Full Time Lab Assistant</h2>
@@ -114,6 +113,7 @@
     <script src="js/canvas.js"></script>
     <script src="js/slider.js"></script>
     <script src="js/skill.js"></script>
+    <script src="js/intersection.js"></script>
 
 </body>
 

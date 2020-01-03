@@ -13,6 +13,17 @@ body {
 	letter-spacing: 2px;
 	background-color: #0c0c0c;
 }
+
+.scroll-to-view {
+	opacity: 0;
+	transition: all 500ms ease-out;
+	transform: translateY(30px);
+}
+.is-visible {
+	opacity: 1;
+	transform: translateY(0px);
+}
+
 .text {
 	line-height: 1.8em;
 }
@@ -76,12 +87,22 @@ nav ul li i {
 	padding: 10px 0px;
 	background-color: #21282e;
 }
-nav ul li:hover span {
+nav ul li:hover span,
+nav ul li:focus span {
 	transform: rotateY(0deg);
+}
+nav ul li:focus {
+	outline: none;
 }
 
 main section {
 	min-height: 100vh;
+}
+
+.background-image {
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: center;
 }
 
 /* HOME */
@@ -94,9 +115,8 @@ main section {
 	width: 100px;
 	border-radius: 50%;
 }
-#home .background-image {
+#home #home-background {
 	background: url('../img/background3.jpg') center / cover black;
-	background-attachment: fixed;
 	height: 100%;
 	width: 100%;
 	position: absolute;
@@ -159,10 +179,6 @@ main section {
 }
 .common-section:nth-child(odd) {
 	background-color: #18101b;
-	background-image: url('./../img/wallpapersden.com_fantasy-forest-city_2560x1440.jpg	');
-	background-position: center;
-	background-size: cover;
-	background-attachment: fixed;
 }
 
 /* PROFILE */
@@ -195,14 +211,21 @@ main section {
 	border-radius: 2px;
 	transition: .2s ease-in;
 }
-#profile .contact img:hover {
-	transform: scale(1.1);
+#profile .contact a:hover img,
+#profile .contact a:focus img {
+	transform: scale(1.2);
+}
+#profile .contact a:focus {
+	outline: none;
 }
 #profile h2 {
 	text-align: center;
 }
 
 /* EXPERIENCES */
+#experiences {
+	background-image: linear-gradient(to bottom, #18101b 90%, #0c0c0c);
+}
 #experiences .experience-container {
 	display: flex;
 	justify-content: center;
@@ -213,7 +236,8 @@ main section {
 	width: 400px;
 	height: 300px;
 }
-#experiences .experience-container .experience-item-container:hover .experience-item {
+#experiences .experience-container .experience-item-container:hover .experience-item,
+#experiences .experience-container .experience-item-container:focus .experience-item {
 	transform: rotateY(180deg);
 }
 #experiences .experience-container .experience-item {
@@ -286,7 +310,8 @@ footer a {
 	text-decoration: none;
 	color: rgb(146, 217, 255);
 }
-footer a:hover {
+footer a:hover,
+footer a:focus {
 	text-decoration: underline;
 }
 
