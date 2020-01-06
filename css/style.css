@@ -1,3 +1,8 @@
+:root {
+	--primary-color: #18101b;
+	--primary-color-darken: #0c0c0c;
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -11,7 +16,7 @@ body {
 	overflow-x: hidden;
 	min-height: 100vh;
 	letter-spacing: 2px;
-	background-color: #0c0c0c;
+	background-color: var(--primary-color-darken);
 }
 
 .scroll-to-view {
@@ -175,10 +180,10 @@ main section {
 	font-size: 1.3em;
 }
 .common-section:nth-child(even) {
-	background-image: linear-gradient(to bottom, #0c0c0c 90%, #18101b);
+	background-image: linear-gradient(to bottom, var(--primary-color-darken) 90%, var(--primary-color));
 }
 .common-section:nth-child(odd) {
-	background-color: #18101b;
+	background-color: var(--primary-color);
 }
 
 /* PROFILE */
@@ -224,7 +229,7 @@ main section {
 
 /* EXPERIENCES */
 #experiences {
-	background-image: linear-gradient(to bottom, #18101b 90%, #0c0c0c);
+	background-image: linear-gradient(to bottom, var(--primary-color) 90%, var(--primary-color-darken));
 }
 #experiences .experience-container {
 	display: flex;
@@ -262,7 +267,7 @@ main section {
 	text-align: center;
 	position: absolute;
 	transform: rotateY(180deg);
-	background-color: #18101b;
+	background-color: var(--primary-color-darken);
 	backface-visibility: hidden;
 }
 #experiences .experience-container .experience-item .description > * {
@@ -274,6 +279,15 @@ main section {
 	background-size: cover;
 	background-position: center;
 	backface-visibility: hidden;
+}
+#canvas-particle {
+	position: absolute;
+	top: 0;
+	left: 0;
+	max-width: none;
+	max-height: none;
+	padding: 0;
+	margin: 0;
 }
 
 #skills #skill-container {
@@ -295,7 +309,7 @@ main section {
 }
 
 footer {
-	background-image: linear-gradient(to bottom, #18101b 90%, #0c0c0c);
+	background-image: linear-gradient(to bottom, var(--primary-color) 90%, var(--primary-color-darken));
 	color: white;
 	display: flex;
 	justify-content: space-between;
