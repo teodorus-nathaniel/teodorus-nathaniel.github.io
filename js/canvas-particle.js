@@ -80,7 +80,7 @@
 		}
 
 		render () {
-			this.ctx.strokeStyle = '#233b28';
+			this.ctx.strokeStyle = '#432c4b';
 			super.render();
 		}
 	}
@@ -148,7 +148,7 @@
 		}
 
 		render () {
-			this.ctx.strokeStyle = '#363b23';
+			this.ctx.strokeStyle = '#354b2c';
 			super.render();
 		}
 	}
