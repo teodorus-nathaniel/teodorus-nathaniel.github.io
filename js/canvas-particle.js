@@ -1,6 +1,6 @@
 {
 	class Particle {
-		constructor (ctx, mousePos, gravity, maxVelocity, fps, width) {
+		constructor(ctx, mousePos, gravity, maxVelocity, fps, width) {
 			this.ctx = ctx;
 			this.mousePos = mousePos;
 			this.gravity = gravity;
@@ -18,7 +18,7 @@
 			};
 		}
 
-		getGravity () {
+		getGravity() {
 			const diffX = this.mousePos.x - this.position.x;
 			const diffY = this.mousePos.y - this.position.y;
 
@@ -31,7 +31,7 @@
 			};
 		}
 
-		updateVelocity (axis, gravity) {
+		updateVelocity(axis, gravity) {
 			if (
 				(this.velocity[axis] > this.maxVelocity && gravity > 0) ||
 				(this.velocity[axis] < -this.maxVelocity && gravity < 0)
@@ -40,12 +40,12 @@
 			this.velocity[axis] += gravity / this.fps;
 		}
 
-		updatePosition () {
+		updatePosition() {
 			this.position.x += this.velocity.x;
 			this.position.y += this.velocity.y;
 		}
 
-		update () {
+		update() {
 			const { x, y } = this.getGravity();
 
 			this.updateVelocity('x', x);
@@ -54,7 +54,7 @@
 			this.updatePosition();
 		}
 
-		render () {
+		render() {
 			const { x, y } = this.position;
 
 			this.ctx.beginPath();
@@ -69,7 +69,7 @@
 	canvas.height = window.innerHeight;
 
 	const ctx = canvas.getContext('2d');
-	const GRAVITY = 1.5;
+	const GRAVITY = 2;
 	const MAX_VELOCITY = 4;
 	const FPS = 30;
 	const PARTICLES_AMOUNT = 25;
@@ -82,13 +82,13 @@
 	let particles;
 	createParticles();
 
-	function createParticles (){
+	function createParticles() {
 		particles = Array.from({ length: PARTICLES_AMOUNT }).map(
 			() => new Particle(ctx, mousePos, GRAVITY, MAX_VELOCITY, FPS, Math.random() * 20)
 		);
 	}
 
-	function updateMouse ({ clientX, clientY }){
+	function updateMouse({ clientX, clientY }) {
 		mousePos.x = clientX;
 		mousePos.y = clientY - canvas.getBoundingClientRect().top;
 	}
@@ -97,7 +97,7 @@
 
 	let animationReqId;
 
-	function render (){
+	function render() {
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 		particles.forEach((particle) => {
 			particle.update();
