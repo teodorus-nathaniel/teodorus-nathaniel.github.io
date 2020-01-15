@@ -73,9 +73,9 @@
 	const ctx = canvas.getContext('2d');
 	let points = [];
 	const pointSize = 1.5;
-	const pointCount = 75;
+	const pointCount = 50;
 
-	for (let i = 0; i < 50; i++) {
+	for (let i = 0; i < pointCount; i++) {
 		points.push(new Point());
 	}
 

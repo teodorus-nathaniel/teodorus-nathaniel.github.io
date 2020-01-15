@@ -1,16 +1,10 @@
 {
-	/*
-	stroke / fill?
-	#233b28 #363b23
-	#014775 #752f01
-	*/
-
-	function getHypotenuse (x, y){
+	function getHypotenuse(x, y) {
 		return Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
 	}
 
 	class Particle {
-		constructor (ctx, mousePos, gravity, maxVelocity, fps, width) {
+		constructor(ctx, mousePos, gravity, maxVelocity, fps, width) {
 			this.ctx = ctx;
 			this.mousePos = mousePos;
 			this.gravity = gravity;
@@ -28,7 +22,27 @@
 			};
 		}
 
-		getGravity () {
+		getOpacity() {
+			const distance = this.getNearestEdgeDistance();
+			const maxDistance = 100;
+			let opacity = 1;
+			if (distance < maxDistance) {
+				opacity = distance / maxDistance;
+			}
+			return opacity;
+		}
+
+		getNearestEdgeDistance() {
+			const { x, y } = this.position;
+			const distanceTop = Math.abs(y);
+			const distanceBottom = Math.abs(y - this.ctx.canvas.height);
+			const distanceLeft = Math.abs(x);
+			const distanceRight = Math.abs(x - this.ctx.canvas.width);
+
+			return Math.min(distanceTop, distanceBottom, distanceLeft, distanceRight);
+		}
+
+		getGravity() {
 			const diffX = this.mousePos.x - this.position.x;
 			const diffY = this.mousePos.y - this.position.y;
 
@@ -42,12 +56,12 @@
 			};
 		}
 
-		updatePosition () {
+		updatePosition() {
 			this.position.x += this.velocity.x;
 			this.position.y += this.velocity.y;
 		}
 
-		update () {
+		update() {
 			const { x, y } = this.getGravity();
 
 			this.updateVelocity('x', x);
@@ -56,7 +70,7 @@
 			this.updatePosition();
 		}
 
-		render () {
+		render() {
 			const { x, y } = this.position;
 
 			this.ctx.beginPath();
@@ -66,11 +80,11 @@
 	}
 
 	class ParticleChasing extends Particle {
-		constructor (ctx, mousePos, gravity, maxVelocity, fps, width) {
+		constructor(ctx, mousePos, gravity, maxVelocity, fps, width) {
 			super(ctx, mousePos, gravity, maxVelocity, fps, width);
 		}
 
-		updateVelocity (axis, gravity) {
+		updateVelocity(axis, gravity) {
 			if (
 				(this.velocity[axis] > this.maxVelocity && gravity > 0) ||
 				(this.velocity[axis] < -this.maxVelocity && gravity < 0)
@@ -79,14 +93,16 @@
 			this.velocity[axis] += gravity / this.fps;
 		}
 
-		render () {
-			this.ctx.strokeStyle = '#432c4b';
+		render() {
+			const color = `rgba(243,231,233,${this.getOpacity()})`;
+			this.ctx.strokeStyle = color;
+
 			super.render();
 		}
 	}
 
 	class ParticleFleeing extends Particle {
-		constructor (ctx, mousePos, gravity, maxVelocity, fps, width, maxRadius) {
+		constructor(ctx, mousePos, gravity, maxVelocity, fps, width, maxRadius) {
 			super(ctx, mousePos, gravity, maxVelocity, fps, width);
 			this.maxRadius = maxRadius;
 			this.isChangingPosition = {
@@ -95,7 +111,7 @@
 			};
 		}
 
-		updateVelocity (axis, gravity) {
+		updateVelocity(axis, gravity) {
 			const diffX = this.mousePos.x - this.position.x;
 			const diffY = this.mousePos.y - this.position.y;
 
@@ -128,7 +144,7 @@
 			}
 		}
 
-		updatePosition () {
+		updatePosition() {
 			super.updatePosition();
 			if (this.position.x < 0) {
 				this.position.x = window.innerWidth + this.position.x;
@@ -147,8 +163,8 @@
 			}
 		}
 
-		render () {
-			this.ctx.strokeStyle = '#354b2c';
+		render() {
+			this.ctx.strokeStyle = `rgba(150,150,255,${this.getOpacity()})`;
 			super.render();
 		}
 	}
@@ -159,8 +175,8 @@
 
 	const ctx = canvas.getContext('2d');
 	const GRAVITY = 2;
-	const MAX_VELOCITY = 4;
-	const MAX_RADIUS = 300;
+	const MAX_VELOCITY = 3.5;
+	const MAX_RADIUS = 150;
 	const FPS = 30;
 	const PARTICLES_AMOUNT = 50;
 
@@ -172,7 +188,7 @@
 	let particles;
 	createParticles();
 
-	function createParticles (){
+	function createParticles() {
 		particles = Array.from({ length: PARTICLES_AMOUNT }).map(
 			() =>
 				Math.random() > 0.5
@@ -181,7 +197,7 @@
 		);
 	}
 
-	function updateMouse ({ clientX, clientY }){
+	function updateMouse({ clientX, clientY }) {
 		mousePos.x = clientX;
 		mousePos.y = clientY - canvas.getBoundingClientRect().top;
 	}
@@ -189,8 +205,9 @@
 	window.addEventListener('mousemove', updateMouse);
 
 	let animationReqId;
+	let animationStopped;
 
-	function render (){
+	function render() {
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 		particles.forEach((particle) => {
 			particle.update();
@@ -199,14 +216,28 @@
 		animationReqId = window.requestAnimationFrame(render);
 	}
 
+	function toggleAnimation(e) {
+		if (e.key !== 't') return;
+		if (animationStopped) {
+			animationReqId = window.requestAnimationFrame(render);
+		} else {
+			window.cancelAnimationFrame(animationReqId);
+		}
+		animationStopped = !animationStopped;
+	}
+
 	const observer = new IntersectionObserver((entries) =>
 		entries.forEach((entry) => {
 			if (entry.isIntersecting) {
 				animationReqId = window.requestAnimationFrame(render);
 				window.addEventListener('click', createParticles);
+				window.addEventListener('keypress', toggleAnimation);
+				animationStopped = false;
 			} else {
 				window.cancelAnimationFrame(animationReqId);
-				window.removeEventListener('click', createParticles);
+				window.removeEventListener('dblclick', createParticles);
+				window.removeEventListener('keypress', toggleAnimation);
+				animationStopped = true;
 			}
 		})
 	);

@@ -1,6 +1,8 @@
 :root {
 	--primary-color: #18101b;
+	--primary-color-gradient: #483e4b;
 	--primary-color-darken: #0c0c0c;
+	--primary-color-darken-gradient: #1c1c2c;
 }
 
 * {
@@ -180,10 +182,21 @@ main section {
 	font-size: 1.3em;
 }
 .common-section:nth-child(even) {
-	background-image: linear-gradient(to bottom, var(--primary-color-darken) 90%, var(--primary-color));
+	background-image: linear-gradient(
+		to bottom,
+		var(--primary-color-darken),
+		var(--primary-color-darken-gradient),
+		var(--primary-color-darken) 90%,
+		var(--primary-color)
+	);
 }
 .common-section:nth-child(odd) {
-	background-color: var(--primary-color);
+	background-image: linear-gradient(
+		to bottom,
+		var(--primary-color),
+		var(--primary-color-gradient),
+		var(--primary-color)
+	);
 }
 
 /* PROFILE */
@@ -228,9 +241,6 @@ main section {
 }
 
 /* EXPERIENCES */
-#experiences {
-	background-image: linear-gradient(to bottom, var(--primary-color) 90%, var(--primary-color-darken));
-}
 #experiences .experience-container {
 	display: flex;
 	justify-content: center;
