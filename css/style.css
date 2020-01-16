@@ -184,6 +184,7 @@ main section {
 .common-section:nth-child(even) {
 	background-image: linear-gradient(
 		to bottom,
+		var(--primary-color) 10%,
 		var(--primary-color-darken),
 		var(--primary-color-darken-gradient),
 		var(--primary-color-darken) 90%,
