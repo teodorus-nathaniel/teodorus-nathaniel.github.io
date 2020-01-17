@@ -178,7 +178,7 @@
 	const MAX_VELOCITY = 3.5;
 	const MAX_RADIUS = 150;
 	const FPS = 30;
-	const PARTICLES_AMOUNT = 50;
+	const PARTICLES_AMOUNT = 30;
 	let isPaused = false;
 
 	const mousePos = {
