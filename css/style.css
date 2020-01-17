@@ -1,8 +1,8 @@
 :root {
-	--primary-color: #18101b;
-	--primary-color-gradient: #483e4b;
+	--primary-color: #0b080c;
+	--primary-color-gradient: #141116;
 	--primary-color-darken: #0c0c0c;
-	--primary-color-darken-gradient: #1c1c2c;
+	--primary-color-darken-gradient: #0c0c11;
 }
 
 * {
@@ -21,16 +21,6 @@ body {
 	background-color: var(--primary-color-darken);
 }
 
-.scroll-to-view {
-	opacity: 0;
-	transition: all 500ms ease-out;
-	transform: translateY(30px);
-}
-.is-visible {
-	opacity: 1;
-	transform: translateY(0px);
-}
-
 .text {
 	line-height: 1.8em;
 }
@@ -43,6 +33,46 @@ body {
 	color: white;
 	font-size: 5em;
 	cursor: pointer;
+}
+
+.scroll-to-view {
+	opacity: 0;
+	transition: all 500ms ease-out;
+	transform: translateY(50px);
+}
+.is-visible {
+	opacity: 1;
+	transform: translateY(0px);
+}
+.slide-right_1 {
+	transform: translate(-100px, 0);
+}
+.slide-right_1.is-visible {
+	transform: translate(0, 0);
+}
+.slide-right_2 {
+	transform: translate(-30px, 0);
+	transition-delay: 700ms;
+}
+.slide-right_2.is-visible {
+	transform: translate(0, 0);
+}
+.section-title span::after {
+	content: '';
+	position: absolute;
+	bottom: -10px;
+	left: 30%;
+	width: 40%;
+	height: 5px;
+	background-color: white;
+	transform: translate(200px, 0);
+	transition: all 500ms;
+	transition-delay: 750ms;
+	opacity: 0;
+}
+.section-title.is-visible span::after {
+	opacity: 1;
+	transform: translate(0, 0);
 }
 
 #slider {
@@ -97,6 +127,12 @@ nav ul li i {
 nav ul li:hover span,
 nav ul li:focus span {
 	transform: rotateY(0deg);
+}
+nav ul li:focus,
+nav ul li:hover {
+	box-shadow: 0 10px 20px 0 rgba(200, 200, 200, .1), 0 2px 5px 0 rgba(200, 200, 200, .3);
+	transition: all 500ms ease;
+	transition-delay: 250ms;
 }
 nav ul li:focus {
 	outline: none;
@@ -299,6 +335,42 @@ main section {
 	max-height: none;
 	padding: 0;
 	margin: 0;
+}
+#experiences .help-fab {
+	background-color: white;
+	border-radius: 50%;
+	padding: 5px;
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	bottom: 50px;
+	right: 50px;
+	font-size: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: black;
+	box-shadow: 0 0 20px 0 rgba(255, 255, 255, .3);
+	transition: all 700ms;
+}
+#experiences .help-fab:hover {
+	box-shadow: 0 0 20px 0 rgba(255, 255, 255, .5), 0 0px 5px 0 rgba(255, 255, 255, .7);
+}
+#experiences .help-content {
+	position: absolute;
+	right: 50px;
+	bottom: 125px;
+	opacity: 0;
+	transform: translateY(20px);
+	transition: all 500ms;
+	border-radius: 5px;
+	background-color: rgb(225, 225, 225);
+	color: black;
+	box-shadow: 0 0 20px 0 rgba(200, 200, 200, .5), 0 0px 5px 0 rgba(200, 200, 200, .7);
+}
+#experiences .help-fab:hover + .help-content {
+	opacity: 1;
+	transform: translate(0, 0);
 }
 
 #skills #skill-container {

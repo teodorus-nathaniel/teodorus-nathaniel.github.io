@@ -3,8 +3,6 @@
 		entries.forEach((element) => {
 			if (element.isIntersecting) {
 				element.target.classList.add('is-visible');
-			} else {
-				element.target.classList.remove('is-visible');
 			}
 		});
 	}

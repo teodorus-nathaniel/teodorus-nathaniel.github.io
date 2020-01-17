@@ -1,10 +1,10 @@
 {
-	function getHypotenuse(x, y) {
+	function getHypotenuse (x, y){
 		return Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
 	}
 
 	class Particle {
-		constructor(ctx, mousePos, gravity, maxVelocity, fps, width) {
+		constructor (ctx, mousePos, gravity, maxVelocity, fps, width) {
 			this.ctx = ctx;
 			this.mousePos = mousePos;
 			this.gravity = gravity;
@@ -22,7 +22,7 @@
 			};
 		}
 
-		getOpacity() {
+		getOpacity () {
 			const distance = this.getNearestEdgeDistance();
 			const maxDistance = 100;
 			let opacity = 1;
@@ -32,7 +32,7 @@
 			return opacity;
 		}
 
-		getNearestEdgeDistance() {
+		getNearestEdgeDistance () {
 			const { x, y } = this.position;
 			const distanceTop = Math.abs(y);
 			const distanceBottom = Math.abs(y - this.ctx.canvas.height);
@@ -42,7 +42,7 @@
 			return Math.min(distanceTop, distanceBottom, distanceLeft, distanceRight);
 		}
 
-		getGravity() {
+		getGravity () {
 			const diffX = this.mousePos.x - this.position.x;
 			const diffY = this.mousePos.y - this.position.y;
 
@@ -56,12 +56,12 @@
 			};
 		}
 
-		updatePosition() {
+		updatePosition () {
 			this.position.x += this.velocity.x;
 			this.position.y += this.velocity.y;
 		}
 
-		update() {
+		update () {
 			const { x, y } = this.getGravity();
 
 			this.updateVelocity('x', x);
@@ -70,7 +70,7 @@
 			this.updatePosition();
 		}
 
-		render() {
+		render () {
 			const { x, y } = this.position;
 
 			this.ctx.beginPath();
@@ -80,11 +80,11 @@
 	}
 
 	class ParticleChasing extends Particle {
-		constructor(ctx, mousePos, gravity, maxVelocity, fps, width) {
+		constructor (ctx, mousePos, gravity, maxVelocity, fps, width) {
 			super(ctx, mousePos, gravity, maxVelocity, fps, width);
 		}
 
-		updateVelocity(axis, gravity) {
+		updateVelocity (axis, gravity) {
 			if (
 				(this.velocity[axis] > this.maxVelocity && gravity > 0) ||
 				(this.velocity[axis] < -this.maxVelocity && gravity < 0)
@@ -93,7 +93,7 @@
 			this.velocity[axis] += gravity / this.fps;
 		}
 
-		render() {
+		render () {
 			const color = `rgba(243,231,233,${this.getOpacity()})`;
 			this.ctx.strokeStyle = color;
 
@@ -102,7 +102,7 @@
 	}
 
 	class ParticleFleeing extends Particle {
-		constructor(ctx, mousePos, gravity, maxVelocity, fps, width, maxRadius) {
+		constructor (ctx, mousePos, gravity, maxVelocity, fps, width, maxRadius) {
 			super(ctx, mousePos, gravity, maxVelocity, fps, width);
 			this.maxRadius = maxRadius;
 			this.isChangingPosition = {
@@ -111,7 +111,7 @@
 			};
 		}
 
-		updateVelocity(axis, gravity) {
+		updateVelocity (axis, gravity) {
 			const diffX = this.mousePos.x - this.position.x;
 			const diffY = this.mousePos.y - this.position.y;
 
@@ -144,7 +144,7 @@
 			}
 		}
 
-		updatePosition() {
+		updatePosition () {
 			super.updatePosition();
 			if (this.position.x < 0) {
 				this.position.x = window.innerWidth + this.position.x;
@@ -163,7 +163,7 @@
 			}
 		}
 
-		render() {
+		render () {
 			this.ctx.strokeStyle = `rgba(150,150,255,${this.getOpacity()})`;
 			super.render();
 		}
@@ -179,6 +179,7 @@
 	const MAX_RADIUS = 150;
 	const FPS = 30;
 	const PARTICLES_AMOUNT = 50;
+	let isPaused = false;
 
 	const mousePos = {
 		x: canvas.width / 2,
@@ -188,7 +189,7 @@
 	let particles;
 	createParticles();
 
-	function createParticles() {
+	function createParticles (){
 		particles = Array.from({ length: PARTICLES_AMOUNT }).map(
 			() =>
 				Math.random() > 0.5
@@ -197,7 +198,7 @@
 		);
 	}
 
-	function updateMouse({ clientX, clientY }) {
+	function updateMouse ({ clientX, clientY }){
 		mousePos.x = clientX;
 		mousePos.y = clientY - canvas.getBoundingClientRect().top;
 	}
@@ -207,7 +208,7 @@
 	let animationReqId;
 	let animationStopped;
 
-	function render() {
+	function render (){
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 		particles.forEach((particle) => {
 			particle.update();
@@ -216,7 +217,7 @@
 		animationReqId = window.requestAnimationFrame(render);
 	}
 
-	function toggleAnimation(e) {
+	function toggleAnimation (e){
 		if (e.key !== 't') return;
 		if (animationStopped) {
 			animationReqId = window.requestAnimationFrame(render);
@@ -224,14 +225,17 @@
 			window.cancelAnimationFrame(animationReqId);
 		}
 		animationStopped = !animationStopped;
+		isPaused = !isPaused;
 	}
 
 	const observer = new IntersectionObserver((entries) =>
 		entries.forEach((entry) => {
 			if (entry.isIntersecting) {
-				animationReqId = window.requestAnimationFrame(render);
 				window.addEventListener('click', createParticles);
 				window.addEventListener('keypress', toggleAnimation);
+
+				if (isPaused) return;
+				animationReqId = window.requestAnimationFrame(render);
 				animationStopped = false;
 			} else {
 				window.cancelAnimationFrame(animationReqId);
