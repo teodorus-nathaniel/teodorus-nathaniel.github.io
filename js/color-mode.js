@@ -49,3 +49,7 @@ colorSwitch.addEventListener('click', () => {
 	}
 	isDarkMode = !isDarkMode;
 });
+
+colorSwitch.addEventListener('keypress', function(e) {
+	if (e.key === 'Enter') this.click();
+});

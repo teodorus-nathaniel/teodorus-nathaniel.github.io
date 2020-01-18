@@ -1,5 +1,5 @@
 {
-	function scroll (y){
+	function scroll(y) {
 		window.scrollTo({
 			top: y,
 			left: 0,
@@ -21,6 +21,17 @@
 	experiencesBtn.addEventListener('click', () => scroll(experiences.offsetTop));
 	skillsBtn.addEventListener('click', () => scroll(skills.offsetTop));
 	aboutBtn.addEventListener('click', () => scroll(about.offsetTop));
+
+	function keypressListener(e) {
+		if (e.key === 'Enter') {
+			this.click();
+		}
+	}
+
+	profileBtn.addEventListener('keypress', keypressListener);
+	experiencesBtn.addEventListener('keypress', keypressListener);
+	skillsBtn.addEventListener('keypress', keypressListener);
+	aboutBtn.addEventListener('keypress', keypressListener);
 
 	const homeArrow = document.getElementById('home-arrow-down');
 	const profileArrow = document.getElementById('profile-arrow-down');
