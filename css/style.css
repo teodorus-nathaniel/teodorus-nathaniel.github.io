@@ -3,6 +3,10 @@
 	--primary-color-gradient: #141116;
 	--primary-color-darken: #0c0c0c;
 	--primary-color-darken-gradient: #0c0c11;
+	--text-color: #ffffff;
+	--box-shadow-light: rgba(200, 200, 200, .1);
+	--box-shadow-med: rgba(200, 200, 200, .4);
+	--box-shadow-hard: rgba(200, 200, 200, .7);
 }
 
 * {
@@ -25,12 +29,41 @@ body {
 	line-height: 1.8em;
 }
 
+#color-switch {
+	padding: 5px;
+	box-shadow: 0px 0px 20px 0 var(--box-shadow-light), 0px 0px 5px 0 var(--box-shadow-med);
+	width: 60px;
+	height: 30px;
+	display: flex;
+	align-items: center;
+	background-color: var(--primary-color);
+	position: fixed;
+	bottom: 50px;
+	right: 50px;
+	z-index: 999;
+	border-radius: 50px;
+	transition: all 500ms;
+}
+#color-switch:hover {
+	box-shadow: 0px 0px 20px 0 var(--box-shadow-med), 0px 0px 5px 0 var(--box-shadow-hard);
+}
+#color-switch .circle {
+	border-radius: 50%;
+	background-color: var(--text-color);
+	width: 15px;
+	height: 15px;
+	transition: all 500ms;
+}
+#color-switch.light .circle {
+	transform: translateX(35px);
+}
+
 .fa-angle-down {
 	position: relative;
 	top: 25px;
 	left: 50%;
 	animation: up-down 2s ease-in-out infinite;
-	color: white;
+	color: var(--text-color);
 	font-size: 5em;
 	cursor: pointer;
 }
@@ -64,7 +97,7 @@ body {
 	left: 30%;
 	width: 40%;
 	height: 5px;
-	background-color: white;
+	background-color: var(--text-color);
 	transform: translate(200px, 0);
 	transition: all 500ms;
 	transition-delay: 750ms;
@@ -130,7 +163,7 @@ nav ul li:focus span {
 }
 nav ul li:focus,
 nav ul li:hover {
-	box-shadow: 0 10px 20px 0 rgba(200, 200, 200, .1), 0 2px 5px 0 rgba(200, 200, 200, .3);
+	box-shadow: 0 10px 20px 0 var(--box-shadow-light), 0 2px 5px 0 var(--box-shadow-med);
 	transition: all 500ms ease;
 	transition-delay: 250ms;
 }
@@ -152,17 +185,14 @@ main section {
 #home {
 	width: 100%;
 }
-#home .photo {
-	background: url('./../img/foto.jpg') center / cover black;
-	height: 100px;
-	width: 100px;
-	border-radius: 50%;
-}
 #home #home-background {
-	background: url('../img/background3.jpg') center / cover black;
+	background: url('../img/background3.jpg') center / cover var(--primary-color-darken);
 	height: 100%;
 	width: 100%;
 	position: absolute;
+}
+body.light-mode #home #home-background {
+	filter: invert(100%);
 }
 #home div.text {
 	position: absolute;
@@ -178,7 +208,7 @@ main section {
 	margin: 20px 0px;
 }
 #home div h1 {
-	border-bottom: 1px solid white;
+	border-bottom: 1px solid var(--text-color);
 	padding-bottom: 20px;
 	font-size: 2em;
 	font-weight: bold;
@@ -209,7 +239,7 @@ main section {
 }
 .common-section > * {
 	padding: 50px;
-	color: white;
+	color: var(--text-color);
 	max-width: 1200px;
 	margin: 0px auto;
 }
@@ -249,7 +279,7 @@ main section {
 	justify-content: space-between;
 	align-items: center;
 	padding: 10px 0px;
-	border-bottom: 1px solid white;
+	border-bottom: 1px solid var(--text-color);
 }
 #profile .profile-container li > span:first-child {
 	font-style: oblique;
@@ -282,14 +312,14 @@ main section {
 	display: flex;
 	justify-content: center;
 	align-items: flex-start;
-	border: 1px solid white;
+	border: 1px solid var(--text-color);
 }
 #experiences .experience-container .experience-item-container {
 	width: 400px;
 	height: 300px;
 }
 #experiences .experience-item-container:hover {
-	box-shadow: 0px 0px 20px 0 rgba(200, 200, 200, .3), 0px 0px 5px 0 rgba(200, 200, 200, .7);
+	box-shadow: 0px 0px 20px 0 var(--box-shadow-med), 0px 0px 5px 0 var(--box-shadow-hard);
 	transition: all 500ms;
 	transition-delay: 300ms;
 }
@@ -342,36 +372,37 @@ main section {
 	margin: 0;
 }
 #experiences .help-fab {
+	z-index: 1;
 	background-color: white;
 	border-radius: 50%;
 	padding: 5px;
 	width: 50px;
 	height: 50px;
 	position: absolute;
-	bottom: 50px;
+	bottom: 100px;
 	right: 50px;
 	font-size: 30px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	color: black;
-	box-shadow: 0 0 20px 0 rgba(255, 255, 255, .3);
+	box-shadow: 0 0 20px 0 var(--box-shadow-med);
 	transition: all 700ms;
 }
 #experiences .help-fab:hover {
-	box-shadow: 0 0 20px 0 rgba(255, 255, 255, .5), 0 0px 5px 0 rgba(255, 255, 255, .7);
+	box-shadow: 0 0 20px 0 var(--box-shadow-med), 0 0px 5px 0 var(--box-shadow-hard);
 }
 #experiences .help-content {
 	position: absolute;
 	right: 50px;
-	bottom: 125px;
+	bottom: 175px;
 	opacity: 0;
 	transform: translateY(20px);
 	transition: all 500ms;
 	border-radius: 5px;
 	background-color: rgb(225, 225, 225);
 	color: black;
-	box-shadow: 0 0 20px 0 rgba(200, 200, 200, .5), 0 0px 5px 0 rgba(200, 200, 200, .7);
+	box-shadow: 0 0 20px 0 var(--box-shadow-med), 0 0px 5px 0 var(--box-shadow-hard);
 }
 #experiences .help-fab:hover + .help-content {
 	opacity: 1;
@@ -388,7 +419,7 @@ main section {
 	justify-content: space-between;
 	align-items: center;
 	padding: 10px 20px;
-	border-bottom: 1px dotted white;
+	border-bottom: 1px dotted var(--text-color);
 }
 #skills #skill-container .rating-bar {
 	display: flex;
@@ -398,7 +429,7 @@ main section {
 
 footer {
 	background-image: linear-gradient(to bottom, var(--primary-color) 90%, var(--primary-color-darken));
-	color: white;
+	color: var(--text-color);
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-end;
@@ -410,7 +441,7 @@ footer div > * {
 footer a {
 	font-style: italic;
 	text-decoration: none;
-	color: rgb(146, 217, 255);
+	color: rgb(0, 166, 255);
 }
 footer a:hover,
 footer a:focus {
