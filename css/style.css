@@ -202,7 +202,7 @@ main section {
 	width: 100%;
 }
 #home #home-background {
-	background: url('../img/background3.jpg') center / cover var(--primary-color-darken);
+	background: url('../img/background3.jpg') center / cover rgb(25, 25, 25);
 	height: 100%;
 	width: 100%;
 	position: absolute;
