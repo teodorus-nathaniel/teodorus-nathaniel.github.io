@@ -1,10 +1,10 @@
 {
-	function getHypotenuse(x, y) {
+	function getHypotenuse (x, y){
 		return Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
 	}
 
 	class Particle {
-		constructor(ctx, mousePos, gravity, maxVelocity, fps, width) {
+		constructor (ctx, mousePos, gravity, maxVelocity, fps, width) {
 			this.ctx = ctx;
 			this.mousePos = mousePos;
 			this.gravity = gravity;
@@ -22,7 +22,7 @@
 			};
 		}
 
-		getOpacity() {
+		getOpacity () {
 			const distance = this.getNearestEdgeDistance();
 			const maxDistance = 100;
 			let opacity = 1;
@@ -32,7 +32,7 @@
 			return opacity;
 		}
 
-		getNearestEdgeDistance() {
+		getNearestEdgeDistance () {
 			const { x, y } = this.position;
 			const distanceTop = Math.abs(y);
 			const distanceBottom = Math.abs(y - this.ctx.canvas.height);
@@ -42,7 +42,7 @@
 			return Math.min(distanceTop, distanceBottom, distanceLeft, distanceRight);
 		}
 
-		getGravity() {
+		getGravity () {
 			const diffX = this.mousePos.x - this.position.x;
 			const diffY = this.mousePos.y - this.position.y;
 
@@ -56,12 +56,12 @@
 			};
 		}
 
-		updatePosition() {
+		updatePosition () {
 			this.position.x += this.velocity.x;
 			this.position.y += this.velocity.y;
 		}
 
-		update() {
+		update () {
 			const { x, y } = this.getGravity();
 
 			this.updateVelocity('x', x);
@@ -70,7 +70,7 @@
 			this.updatePosition();
 		}
 
-		render() {
+		render () {
 			const { x, y } = this.position;
 
 			this.ctx.beginPath();
@@ -80,11 +80,11 @@
 	}
 
 	class ParticleChasing extends Particle {
-		constructor(ctx, mousePos, gravity, maxVelocity, fps, width) {
+		constructor (ctx, mousePos, gravity, maxVelocity, fps, width) {
 			super(ctx, mousePos, gravity, maxVelocity, fps, width);
 		}
 
-		updateVelocity(axis, gravity) {
+		updateVelocity (axis, gravity) {
 			if (
 				(this.velocity[axis] > this.maxVelocity && gravity > 0) ||
 				(this.velocity[axis] < -this.maxVelocity && gravity < 0)
@@ -93,10 +93,10 @@
 			this.velocity[axis] += gravity / this.fps;
 		}
 
-		render() {
-			const color =
-				getComputedStyle(document.documentElement).getPropertyValue('--text-color') +
-				new Number(this.getOpacity() * 255).toString(16);
+		render () {
+			let opacity = Math.round(new Number(this.getOpacity() * 255)).toString(16);
+			if (opacity.length === 1) opacity = '0' + opacity;
+			const color = getComputedStyle(document.documentElement).getPropertyValue('--text-color') + opacity;
 			this.ctx.strokeStyle = color;
 
 			super.render();
@@ -104,7 +104,7 @@
 	}
 
 	class ParticleFleeing extends Particle {
-		constructor(ctx, mousePos, gravity, maxVelocity, fps, width, maxRadius) {
+		constructor (ctx, mousePos, gravity, maxVelocity, fps, width, maxRadius) {
 			super(ctx, mousePos, gravity, maxVelocity, fps, width);
 			this.maxRadius = maxRadius;
 			this.isChangingPosition = {
@@ -113,7 +113,7 @@
 			};
 		}
 
-		updateVelocity(axis, gravity) {
+		updateVelocity (axis, gravity) {
 			const diffX = this.mousePos.x - this.position.x;
 			const diffY = this.mousePos.y - this.position.y;
 
@@ -146,7 +146,7 @@
 			}
 		}
 
-		updatePosition() {
+		updatePosition () {
 			super.updatePosition();
 			if (this.position.x < 0) {
 				this.position.x = window.innerWidth + this.position.x;
@@ -165,7 +165,7 @@
 			}
 		}
 
-		render() {
+		render () {
 			this.ctx.strokeStyle = `rgba(150,150,255,${this.getOpacity()})`;
 			super.render();
 		}
@@ -191,7 +191,7 @@
 	let particles;
 	createParticles();
 
-	function createParticles() {
+	function createParticles (){
 		particles = Array.from({ length: PARTICLES_AMOUNT }).map(
 			() =>
 				Math.random() > 0.5
@@ -200,7 +200,7 @@
 		);
 	}
 
-	function updateMouse({ clientX, clientY }) {
+	function updateMouse ({ clientX, clientY }){
 		mousePos.x = clientX;
 		mousePos.y = clientY - canvas.getBoundingClientRect().top;
 	}
@@ -210,7 +210,7 @@
 	let animationReqId;
 	let animationStopped;
 
-	function render() {
+	function render (){
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 		particles.forEach((particle) => {
 			particle.update();
@@ -219,7 +219,7 @@
 		animationReqId = window.requestAnimationFrame(render);
 	}
 
-	function toggleAnimation(e) {
+	function toggleAnimation (e){
 		if (e.key !== 't') return;
 		if (animationStopped) {
 			animationReqId = window.requestAnimationFrame(render);
