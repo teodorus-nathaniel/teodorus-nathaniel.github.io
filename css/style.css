@@ -1,12 +1,14 @@
 :root {
 	--primary-color: #0b080c;
-	--primary-color-gradient: #141116;
+	--primary-color-gradient: rgb(21, 18, 23);
 	--primary-color-darken: #0c0c0c;
 	--primary-color-darken-gradient: #0c0c11;
 	--text-color: #ffffff;
 	--box-shadow-light: rgba(200, 200, 200, .1);
 	--box-shadow-med: rgba(200, 200, 200, .4);
 	--box-shadow-hard: rgba(200, 200, 200, .7);
+	--text-background: radial-gradient(farthest-side at center, rgba(0, 0, 0, 1), rgba(0, 0, 0, .7), rgba(0, 0, 0, .1));
+	--text-transparent: rgba(255, 255, 255, .7);
 }
 
 * {
@@ -23,10 +25,6 @@ body {
 	min-height: 100vh;
 	letter-spacing: 2px;
 	background-color: var(--primary-color-darken);
-}
-
-.text {
-	line-height: 1.8em;
 }
 
 .color-switch-container {
@@ -201,6 +199,17 @@ main section {
 #home {
 	width: 100%;
 }
+#home .hello-text {
+	font-size: 36px;
+	font-family: 'Alata';
+	font-weight: bold;
+	color: var(--text-transparent);
+	top: 30%;
+	position: absolute;
+	left: 10%;
+	padding: 15px 30px;
+	background-image: var(--text-background);
+}
 #home #home-background {
 	background: url('../img/background3.jpg') center / cover rgb(25, 25, 25);
 	height: 100%;
@@ -212,13 +221,22 @@ body.light-mode #home #home-background {
 }
 #home div.text {
 	position: absolute;
-	top: 50%;
-	left: 30%;
-	transform: translate(-50%, -50%);
+	font-family: 'Alata';
+	font-weight: 800;
+	top: 40%;
+	left: 10%;
 	color: white;
-	background-color: rgba(50, 50, 50, 0.5);
-	padding: 20px 40px;
-	border-radius: 5px;
+	padding: 15px 30px;
+	background-image: var(--text-background);
+}
+#home div.text p {
+	margin: 40px 0px;
+	font-size: 24px;
+	color: var(--text-transparent);
+}
+#home div.text p:first-child {
+	font-size: 50px;
+	color: var(--text-color);
 }
 #home div > * {
 	margin: 20px 0px;
@@ -466,9 +484,17 @@ footer a:focus {
 }
 
 @media screen and (max-width: 950px) {
+	#home .hello-text {
+		top: 15%;
+		left: 50%;
+		transform: translateX(-50%);
+		text-align: center;
+	}
 	#home div.text {
+		top: 25%;
 		left: 50%;
 		text-align: center;
+		transform: translateX(-50%);
 	}
 	#home div.text div {
 		margin: 0px auto;

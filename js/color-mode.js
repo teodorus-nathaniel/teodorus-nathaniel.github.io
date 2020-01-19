@@ -10,6 +10,8 @@ const darkModeOptions = {
 	boxShadowLight: 'rgba(200, 200, 200, .1)',
 	boxShadowMed: 'rgba(200, 200, 200, .4)',
 	boxShadowHard: 'rgba(200, 200, 200, .7)',
+	textBackground: 'radial-gradient(farthest-side at center, rgba(0, 0, 0, 1), rgba(0, 0, 0, .7), rgba(0, 0, 0, .1))',
+	textTransparent: 'rgba(255, 255, 255, .7)',
 };
 
 const lightModeOptions = {
@@ -21,9 +23,12 @@ const lightModeOptions = {
 	boxShadowLight: 'rgba(50, 50, 50, .1)',
 	boxShadowMed: 'rgba(50, 50, 50, .4)',
 	boxShadowHard: 'rgba(50, 50, 50, .7)',
+	textBackground:
+		'radial-gradient(farthest-side at center, rgba(200, 200, 200, 1), rgba(200, 200, 200, .7) 80%, rgba(200, 200, 200, .1))',
+	textTransparent: 'rgba(50, 50, 50, .7)',
 };
 
-function changeMode(colorOptions) {
+function changeMode (colorOptions){
 	const rootStyle = document.documentElement.style;
 	rootStyle.setProperty('--primary-color', colorOptions.primaryColor);
 	rootStyle.setProperty('--primary-color-gradient', colorOptions.primaryColorGradient);
@@ -33,6 +38,8 @@ function changeMode(colorOptions) {
 	rootStyle.setProperty('--box-shadow-light', colorOptions.boxShadowLight);
 	rootStyle.setProperty('--box-shadow-med', colorOptions.boxShadowMed);
 	rootStyle.setProperty('--box-shadow-hard', colorOptions.boxShadowHard);
+	rootStyle.setProperty('--text-background', colorOptions.textBackground);
+	rootStyle.setProperty('--text-transparent', colorOptions.textTransparent);
 }
 
 colorSwitch.addEventListener('click', () => {
@@ -50,6 +57,6 @@ colorSwitch.addEventListener('click', () => {
 	isDarkMode = !isDarkMode;
 });
 
-colorSwitch.addEventListener('keypress', function(e) {
+colorSwitch.addEventListener('keypress', function (e){
 	if (e.key === 'Enter') this.click();
 });
