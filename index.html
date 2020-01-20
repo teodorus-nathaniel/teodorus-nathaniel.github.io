@@ -18,6 +18,7 @@
     <script src="js/skill.js" defer></script>
     <script src="js/intersection.js" defer></script>
     <script src="js/color-mode.js" defer></script>
+    <script src="js/shapes-generator.js" defer></script>
 </head>
 
 <body>
@@ -64,12 +65,17 @@
             <i class='fa fa-angle-down' id="home-arrow-down"></i>
         </section>
         <section id='profile' class="common-section">
+            <div class="shapes-background">
+
+            </div>
             <div class="heading">
                 <h1 class="scroll-to-view slide-right_1 section-title"><span>-- Profile --</span></h1>
             </div>
             <ul class="profile-container">
                 <li class="scroll-to-view"><span>Name: </span><span>Teodorus Nathaniel Kurniawan</span></li>
-                <li class="scroll-to-view"><span>Age: </span><span><script>document.write(Math.floor((new Date() - new Date(2000, 11, 9)) / (3600 * 24 * 365 * 1000)))</script> years old</span></li>
+                <li class="scroll-to-view"><span>Age: </span><span>
+                        <script>document.write(Math.floor((new Date() - new Date(2000, 11, 9)) / (3600 * 24 * 365 * 1000)))</script>
+                        years old</span></li>
                 <li class="scroll-to-view"><span>Job: </span><span>Student and Lab Instructor in Binus University</span>
                 </li>
                 <li class="scroll-to-view"><span>Line: </span><span>nathaniel.kurniawan</span></li>
@@ -113,6 +119,9 @@
             <i class='fa fa-angle-down' id="experiences-arrow-down"></i>
         </section>
         <section id='skills' class="common-section">
+            <div class="shapes-background">
+
+            </div>
             <div class="heading">
                 <h1 class="scroll-to-view slide-right_1 section-title"><span>-- Skills --</span></h1>
             </div>
