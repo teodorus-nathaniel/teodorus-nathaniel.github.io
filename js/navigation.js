@@ -1,11 +1,15 @@
 {
-	function scroll(y) {
+	function scroll (y){
 		window.scrollTo({
 			top: y,
 			left: 0,
 			behavior: 'smooth',
 		});
 	}
+
+	document.getElementById('nav-icon').addEventListener('click', function (){
+		this.classList.toggle('open');
+	});
 
 	const profile = document.getElementById('profile');
 	const experiences = document.getElementById('experiences');
@@ -22,7 +26,7 @@
 	skillsBtn.addEventListener('click', () => scroll(skills.offsetTop));
 	aboutBtn.addEventListener('click', () => scroll(about.offsetTop));
 
-	function keypressListener(e) {
+	function keypressListener (e){
 		if (e.key === 'Enter') {
 			this.click();
 		}
