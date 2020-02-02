@@ -505,10 +505,13 @@ body.light-mode #home #home-background {
 	justify-content: center;
 	align-items: center;
 }
-#projects .projects-container > a:hover {
+#projects .projects-container > a:hover,
+#projects .projects-container > a:focus {
 	border: 2px solid var(--text-color);
+	outline: none;
 }
-#projects .projects-container > a:hover .project-image {
+#projects .projects-container > a:hover .project-image,
+#projects .projects-container > a:focus .project-image {
 	filter: blur(2px);
 }
 #projects .projects-container .project-info {
@@ -528,7 +531,8 @@ body.light-mode #home #home-background {
 	font-weight: bolder;
 	font-size: 24px;
 }
-#projects .projects-container > a:hover .project-info {
+#projects .projects-container > a:hover .project-info,
+#projects .projects-container > a:focus .project-info {
 	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 #projects .projects-container .project-image {
@@ -541,7 +545,8 @@ body.light-mode #home #home-background {
 	background-position: center;
 	transition: transform 1s ease-in-out, filter 1s ease-in-out;
 }
-#projects .projects-container .project-image:hover {
+#projects .projects-container .project-image:hover,
+#projects .projects-container .project-image:focus {
 	transform: scale(1.1);
 }
 

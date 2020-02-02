@@ -42,21 +42,23 @@ function changeMode (colorOptions){
 	rootStyle.setProperty('--text-transparent', colorOptions.textTransparent);
 }
 
-colorSwitch.addEventListener('click', () => {
-	if (isDarkMode) {
-		document.body.classList.add('light-mode');
-		colorSwitch.classList.remove('dark');
-		colorSwitch.classList.add('light');
-		changeMode(lightModeOptions);
-	} else {
-		document.body.classList.remove('light-mode');
-		colorSwitch.classList.remove('light');
-		colorSwitch.classList.add('dark');
-		changeMode(darkModeOptions);
-	}
-	isDarkMode = !isDarkMode;
-});
+export default function initColorSwitch (){
+	colorSwitch.addEventListener('click', () => {
+		if (isDarkMode) {
+			document.body.classList.add('light-mode');
+			colorSwitch.classList.remove('dark');
+			colorSwitch.classList.add('light');
+			changeMode(lightModeOptions);
+		} else {
+			document.body.classList.remove('light-mode');
+			colorSwitch.classList.remove('light');
+			colorSwitch.classList.add('dark');
+			changeMode(darkModeOptions);
+		}
+		isDarkMode = !isDarkMode;
+	});
 
-colorSwitch.addEventListener('keypress', function (e){
-	if (e.key === 'Enter') this.click();
-});
+	colorSwitch.addEventListener('keypress', function (e){
+		if (e.key === 'Enter') this.click();
+	});
+}
