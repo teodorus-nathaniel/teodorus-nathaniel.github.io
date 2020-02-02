@@ -26,6 +26,7 @@ const data = [
 ];
 
 const skillContainer = document.getElementById('skill-container');
+
 export default function initSkills (){
 	data.forEach((skill) => {
 		let stars = Array.from({ length: skill.rating }).reduce((prev) => prev + '<i class="fa fa-star"></i>', '');

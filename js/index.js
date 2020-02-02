@@ -8,16 +8,22 @@ import initIntersection from './modules/intersection.js';
 import initSkills from './modules/skills.js';
 import initSlider from './modules/slider.js';
 
+function initAge (){
+	const age = Math.floor((new Date() - new Date(2000, 11, 9)) / (3600 * 24 * 365 * 1000));
+	document.getElementById('age-label').textContent = age + ' years old';
+}
+
 function init (){
+	initAge();
+	initHomeCanvas();
 	initCanvasParticles();
 	initShapes();
-	initProjects();
 	initNav();
-	initHomeCanvas();
-	initColorSwitch();
-	initIntersection();
 	initSkills();
+	initProjects();
+	initColorSwitch();
 	initSlider();
+	initIntersection();
 }
 
 init();

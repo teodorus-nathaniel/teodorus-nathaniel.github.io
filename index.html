@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Alata&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
+    <meta name="theme-color" content="#0b080c">
 
     <script src="js/index.js" type="module" defer></script>
 </head>
@@ -76,7 +77,7 @@
                 <p class="scroll-to-view slide-right_2">an Undergraduate Computer Science Student</p
                     class="scroll-to-view slide-right_1">
             </div>
-            <i class='fa fa-angle-down' id="home-arrow-down"></i>
+            <a href="#profile" class='fa fa-angle-down'><i></i></a>
         </section>
         <section id='profile' class="common-section">
             <div class="shapes-background">
@@ -87,9 +88,10 @@
             </div>
             <ul class="profile-container">
                 <li class="scroll-to-view"><span>Name: </span><span>Teodorus Nathaniel Kurniawan</span></li>
-                <li class="scroll-to-view"><span>Age: </span><span>
-                        <script>document.write(Math.floor((new Date() - new Date(2000, 11, 9)) / (3600 * 24 * 365 * 1000)))</script>
-                        years old</span></li>
+                <li class="scroll-to-view">
+                    <span>Age: </span>
+                    <span id="age-label"></span>
+                </li>
                 <li class="scroll-to-view"><span>Job: </span><span>Student and Lab Instructor in Binus University</span>
                 </li>
                 <li class="scroll-to-view"><span>Line: </span><span>nathaniel.kurniawan</span></li>
@@ -103,7 +105,7 @@
                     <a href="#"><img src="./img/gmail.svg" alt="gmail"></a>
                 </div>
             </div>
-            <i class='fa fa-angle-down' id="profile-arrow-down"></i>
+            <a href="#experiences" class='fa fa-angle-down'><i></i></a>
         </section>
         <section id='experiences' class="common-section">
             <canvas id="canvas-particle"></canvas>
@@ -130,7 +132,7 @@
                     </div>
                 </div>
             </div>
-            <i class='fa fa-angle-down' id="experiences-arrow-down"></i>
+            <a href="#skills" class='fa fa-angle-down'><i></i></a>
         </section>
         <section id='skills' class="common-section">
             <div class="shapes-background">
@@ -142,7 +144,7 @@
             <ul id="skill-container">
 
             </ul>
-            <i class='fa fa-angle-down' id="skills-arrow-down"></i>
+            <a href="#projects" class='fa fa-angle-down'><i></i></a>
         </section>
         <section class="common-section" id="projects">
             <div class="shapes-background">
@@ -157,7 +159,7 @@
 
             </div>
 
-            <i class='fa fa-angle-down' id="skills-arrow-down"></i>
+            <a class='fa fa-angle-down' href="#about"><i></i></a>
         </section>
     </main>
 
@@ -165,16 +167,13 @@
         <div>Copyright &copy; and made by Teodorus Nathaniel Kurniawan</div>
         <div>
             <div>Icons made by
-                <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from
-                <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+                <a href="https://www.flaticon.com/authors/freepik" title="Freepik" rel="noreferrer">Freepik</a> from
+                <a href=" https://www.flaticon.com/" title="Flaticon" rel="noreferrer">www.flaticon.com</a>
             </div>
             <div>Icons made by
-                <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from
-                <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
-            </div>
-            <div>Icons made by
-                <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from
-                <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+                <a href=" https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect" rel="noreferrer">Pixel
+                    perfect</a> from
+                <a href="https://www.flaticon.com/" title="Flaticon" rel="noreferrer">www.flaticon.com</a>
             </div>
         </div>
     </footer>

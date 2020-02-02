@@ -85,7 +85,7 @@ body {
 	animation: up-down 2s ease-in-out infinite;
 	color: var(--text-color);
 	font-size: 5em;
-	cursor: pointer;
+	text-decoration: none;
 }
 
 .scroll-to-view {
