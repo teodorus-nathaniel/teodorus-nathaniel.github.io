@@ -158,7 +158,7 @@ nav {
 	right: 30px;
 	top: 50px;
 	padding: 20px;
-	z-index: 1;
+	z-index: 999;
 }
 nav ul {
 	display: flex;
@@ -512,8 +512,9 @@ body.light-mode #home #home-background {
 	filter: blur(2px);
 }
 #projects .projects-container .project-info {
-	width: 0;
-	height: 0;
+	width: 100%;
+	height: 100%;
+	clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
 	overflow: hidden;
 	transition: all 500ms;
 	display: flex;
@@ -528,8 +529,7 @@ body.light-mode #home #home-background {
 	font-size: 24px;
 }
 #projects .projects-container > a:hover .project-info {
-	width: 100%;
-	height: 100%;
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 #projects .projects-container .project-image {
 	position: absolute;
@@ -610,7 +610,7 @@ footer a:focus {
 		height: 30px;
 		position: fixed;
 		transform: rotate(0deg);
-		transition: .5s ease-in-out;
+		transition: all .5s ease-in-out;
 		top: 50px;
 		right: 50px;
 		cursor: pointer;
@@ -665,5 +665,9 @@ footer a:focus {
 		top: 18px;
 		width: 0%;
 		left: 50%;
+	}
+
+	#projects .projects-container {
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 	}
 }

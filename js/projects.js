@@ -11,7 +11,6 @@ const projects = [
 	},
 ];
 
-console.log('object');
 const container = document.getElementById('projects-container');
 projects.forEach(
 	(project) =>

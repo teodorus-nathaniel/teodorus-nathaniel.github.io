@@ -16,7 +16,6 @@
 
 	Array.from(shapesBackground).forEach((container) => {
 		const { width, height } = container.getBoundingClientRect();
-		console.log(width, height);
 		Array.from({ length: SHAPES_COUNT }).forEach(() =>
 			container.appendChild(
 				generateShape(
