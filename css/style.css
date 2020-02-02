@@ -19,6 +19,9 @@
 	position: relative;
 	font-weight: 400;
 }
+html {
+	scroll-behavior: smooth;
+}
 body {
 	font-family: 'Dosis', sans-serif;
 	overflow-x: hidden;
@@ -164,10 +167,15 @@ nav ul {
 }
 nav ul li {
 	width: 200px;
+	margin: 10px 0px;
+}
+nav ul li a {
+	color: white;
+	text-decoration: none;
+	display: block;
 	display: flex;
 	justify-content: space-between;
 	align-items: stretch;
-	margin: 10px 0px;
 	perspective: 40em;
 }
 nav ul li span {
@@ -196,10 +204,10 @@ nav ul li:hover {
 	transition: all 500ms ease;
 	transition-delay: 250ms;
 }
-nav ul li:focus {
+nav ul li a:focus {
 	outline: none;
 }
-nav ul li:focus i {
+nav ul li a:focus i {
 	outline: 1px solid var(--text-color);
 }
 
@@ -461,6 +469,7 @@ body.light-mode #home #home-background {
 	transform: translate(0, 0);
 }
 
+/* SKILLS */
 #skills #skill-container {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
@@ -477,6 +486,63 @@ body.light-mode #home #home-background {
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;
+}
+
+/* PROJECTS */
+#projects .projects-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+	padding: 0;
+}
+#projects .projects-container > a {
+	text-decoration: none;
+	color: white;
+	height: 400px;
+	overflow: hidden;
+	border: 2px solid var(--text-transparent);
+	transition: all 500ms;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#projects .projects-container > a:hover {
+	border: 2px solid var(--text-color);
+}
+#projects .projects-container > a:hover .project-image {
+	filter: blur(2px);
+}
+#projects .projects-container .project-info {
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	transition: all 500ms;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	background-color: rgba(0, 0, 0, .4);
+}
+#projects .projects-container .project-info .title {
+	margin: 10px 0px;
+	font-weight: bolder;
+	font-size: 24px;
+}
+#projects .projects-container > a:hover .project-info {
+	width: 100%;
+	height: 100%;
+}
+#projects .projects-container .project-image {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	background-size: cover;
+	background-position: center;
+	transition: transform 1s ease-in-out, filter 1s ease-in-out;
+}
+#projects .projects-container .project-image:hover {
+	transform: scale(1.1);
 }
 
 footer {

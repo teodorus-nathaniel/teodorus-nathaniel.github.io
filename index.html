@@ -11,7 +11,6 @@
     <link href="https://fonts.googleapis.com/css?family=Alata&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
 
-    <script src="js/navigation.js" defer></script>
     <script src="js/canvas.js" defer></script>
     <script src="js/canvas-particle.js" defer></script>
     <script src="js/slider.js" defer></script>
@@ -19,6 +18,7 @@
     <script src="js/intersection.js" defer></script>
     <script src="js/color-mode.js" defer></script>
     <script src="js/shapes-generator.js" defer></script>
+    <script src="js/projects.js" defer></script>
 </head>
 
 <body>
@@ -40,21 +40,35 @@
 
     <nav>
         <ul>
-            <li id="profile-btn" tabindex="0">
-                <span>Profile</span>
-                <i class="fa fa-user" aria-hidden="true"></i>
+            <li id="profile-btn">
+                <a href="#profile">
+                    <span>Profile</span>
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                </a>
             </li>
-            <li id="experiences-btn" tabindex="0">
-                <span>Experiences</span>
-                <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+            <li id="experiences-btn">
+                <a href="#experiences">
+                    <span>Experiences</span>
+                    <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                </a>
             </li>
-            <li id="skills-btn" tabindex="0">
-                <span>Skills</span>
-                <i class="fa fa-cogs" aria-hidden="true"></i>
+            <li id="skills-btn">
+                <a href="#skills">
+                    <span>Skills</span>
+                    <i class="fa fa-cogs" aria-hidden="true"></i>
+                </a>
             </li>
-            <li id="about-btn" tabindex="0">
-                <span>About</span>
-                <i class="fa fa-info" aria-hidden="true"></i>
+            <li id="projects-btn">
+                <a href="#projects">
+                    <span>Projects</span>
+                    <i class="fa fa-tasks" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li id="about-btn">
+                <a href="#about">
+                    <span>About</span>
+                    <i class="fa fa-info" aria-hidden="true"></i>
+                </a>
             </li>
         </ul>
     </nav>
@@ -135,6 +149,21 @@
             <ul id="skill-container">
 
             </ul>
+            <i class='fa fa-angle-down' id="skills-arrow-down"></i>
+        </section>
+        <section class="common-section" id="projects">
+            <div class="shapes-background">
+
+            </div>
+
+            <div class="heading">
+                <h1 class="scroll-to-view slide-right_1 section-title"><span>-- My Projects --</span></h1>
+            </div>
+
+            <div class="projects-container" id="projects-container">
+
+            </div>
+
             <i class='fa fa-angle-down' id="skills-arrow-down"></i>
         </section>
     </main>
