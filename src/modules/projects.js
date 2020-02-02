@@ -6,7 +6,7 @@ const projects = [
 	},
 	{
 		name: 'Othello',
-		imgPath: './../img/othello.png',
+		imgPath: './../img/othello.jpg',
 		link: 'https://othelloo.herokuapp.com',
 	},
 ];
