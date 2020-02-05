@@ -7,7 +7,12 @@
 	--box-shadow-light: rgba(200, 200, 200, .1);
 	--box-shadow-med: rgba(200, 200, 200, .4);
 	--box-shadow-hard: rgba(200, 200, 200, .7);
-	--text-background: radial-gradient(farthest-side at center, rgba(0, 0, 0, 1), rgba(0, 0, 0, .7), rgba(0, 0, 0, .1));
+	--text-background: radial-gradient(
+		farthest-side at center,
+		rgba(0, 0, 0, 1),
+		rgba(0, 0, 0, .7),
+		rgba(0, 0, 0, .1)
+	);
 	--text-transparent: rgba(255, 255, 255, .7);
 }
 
@@ -49,7 +54,8 @@ body {
 }
 #color-switch {
 	padding: 5px;
-	box-shadow: 0px 0px 20px 0 var(--box-shadow-light), 0px 0px 5px 0 var(--box-shadow-med);
+	box-shadow: 0px 0px 20px 0 var(--box-shadow-light),
+		0px 0px 5px 0 var(--box-shadow-med);
 	width: 60px;
 	height: 30px;
 	display: flex;
@@ -60,11 +66,12 @@ body {
 }
 #color-switch:hover,
 #color-switch:focus {
-	box-shadow: 0px 0px 20px 0 var(--box-shadow-med), 0px 0px 5px 0 var(--box-shadow-hard);
+	box-shadow: 0px 0px 20px 0 var(--box-shadow-med),
+		0px 0px 5px 0 var(--box-shadow-hard);
 }
 #color-switch:focus {
-	box-shadow: 0px 0px 20px 0 var(--box-shadow-med), 0px 0px 5px 0 var(--box-shadow-hard),
-		0px 0px 0px 2px var(--text-color);
+	box-shadow: 0px 0px 20px 0 var(--box-shadow-med),
+		0px 0px 5px 0 var(--box-shadow-hard), 0px 0px 0px 2px var(--text-color);
 	outline: none;
 }
 #color-switch .circle {
@@ -144,13 +151,19 @@ body {
 
 #slider {
 	z-index: 2;
-	background: linear-gradient(to right, #011f4b, #03396c, #014775, #305364, #475f70);
+	background: linear-gradient(
+		to right,
+		#011f4b,
+		#03396c,
+		#014775,
+		#305364,
+		#475f70
+	);
 	height: 5px;
 	position: fixed;
 	top: 0px;
 	left: 0px;
 }
-
 nav {
 	color: white;
 	padding: 20px 0px;
@@ -200,7 +213,8 @@ nav ul li:hover span {
 	transform: rotateY(0deg);
 }
 nav ul li:hover {
-	box-shadow: 0 10px 20px 0 var(--box-shadow-light), 0 2px 5px 0 var(--box-shadow-med);
+	box-shadow: 0 10px 20px 0 var(--box-shadow-light),
+		0 2px 5px 0 var(--box-shadow-med);
 	transition: all 500ms ease;
 	transition-delay: 250ms;
 }
@@ -210,17 +224,14 @@ nav ul li a:focus {
 nav ul li a:focus i {
 	outline: 1px solid var(--text-color);
 }
-
 main section {
 	min-height: 100vh;
 }
-
 .background-image {
 	background-attachment: fixed;
 	background-size: cover;
 	background-position: center;
 }
-
 /* HOME */
 #home {
 	width: 100%;
@@ -280,7 +291,6 @@ body.light-mode #home #home-background {
 	bottom: 75px;
 	top: initial;
 }
-
 @keyframes up-down {
 	0% {
 		transform: translate(-50%, 0px);
@@ -292,7 +302,6 @@ body.light-mode #home #home-background {
 		transform: translate(-50%, 0px);
 	}
 }
-
 .common-section {
 	padding: 50px 0px;
 }
@@ -324,7 +333,6 @@ body.light-mode #home #home-background {
 		var(--primary-color)
 	);
 }
-
 /* PROFILE */
 #profile .profile-container {
 	display: flex;
@@ -366,7 +374,6 @@ body.light-mode #home #home-background {
 #profile h2 {
 	text-align: center;
 }
-
 /* EXPERIENCES */
 #experiences .experience-container {
 	display: flex;
@@ -379,12 +386,19 @@ body.light-mode #home #home-background {
 	height: 300px;
 }
 #experiences .experience-item-container:hover {
-	box-shadow: 0px 0px 20px 0 var(--box-shadow-med), 0px 0px 5px 0 var(--box-shadow-hard);
+	box-shadow: 0px 0px 20px 0 var(--box-shadow-med),
+		0px 0px 5px 0 var(--box-shadow-hard);
 	transition: all 500ms;
 	transition-delay: 300ms;
 }
-#experiences .experience-container .experience-item-container:hover .experience-item,
-#experiences .experience-container .experience-item-container:focus .experience-item {
+#experiences
+	.experience-container
+	.experience-item-container:hover
+	.experience-item,
+#experiences
+	.experience-container
+	.experience-item-container:focus
+	.experience-item {
 	transform: rotateY(180deg);
 }
 #experiences .experience-container .experience-item {
@@ -450,7 +464,8 @@ body.light-mode #home #home-background {
 	transition: all 700ms;
 }
 #experiences .help-fab:hover {
-	box-shadow: 0 0 20px 0 var(--box-shadow-med), 0 0px 5px 0 var(--box-shadow-hard);
+	box-shadow: 0 0 20px 0 var(--box-shadow-med),
+		0 0px 5px 0 var(--box-shadow-hard);
 }
 #experiences .help-content {
 	position: absolute;
@@ -462,19 +477,20 @@ body.light-mode #home #home-background {
 	border-radius: 5px;
 	background-color: rgb(225, 225, 225);
 	color: black;
-	box-shadow: 0 0 20px 0 var(--box-shadow-med), 0 0px 5px 0 var(--box-shadow-hard);
+	box-shadow: 0 0 20px 0 var(--box-shadow-med),
+		0 0px 5px 0 var(--box-shadow-hard);
 }
 #experiences .help-fab:hover + .help-content {
 	opacity: 1;
 	transform: translate(0, 0);
 }
-
 /* SKILLS */
 #skills #skill-container {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	gap: 30px 50px;
 }
+
 #skills #skill-container li {
 	display: flex;
 	justify-content: space-between;
@@ -487,13 +503,13 @@ body.light-mode #home #home-background {
 	align-items: center;
 	justify-content: flex-start;
 }
-
 /* PROJECTS */
 #projects .projects-container {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 	padding: 0;
 }
+
 #projects .projects-container > a {
 	text-decoration: none;
 	color: white;
@@ -513,6 +529,7 @@ body.light-mode #home #home-background {
 #projects .projects-container > a:hover .project-image,
 #projects .projects-container > a:focus .project-image {
 	filter: blur(2px);
+	transform: scale(1.1);
 }
 #projects .projects-container .project-info {
 	width: 100%;
@@ -545,13 +562,12 @@ body.light-mode #home #home-background {
 	background-position: center;
 	transition: transform 1s ease-in-out, filter 1s ease-in-out;
 }
-#projects .projects-container .project-image:hover,
-#projects .projects-container .project-image:focus {
-	transform: scale(1.1);
-}
-
 footer {
-	background-image: linear-gradient(to bottom, var(--primary-color) 90%, var(--primary-color-darken));
+	background-image: linear-gradient(
+		to bottom,
+		var(--primary-color) 90%,
+		var(--primary-color-darken)
+	);
 	color: var(--text-color);
 	display: flex;
 	justify-content: space-between;
@@ -570,7 +586,6 @@ footer a:hover,
 footer a:focus {
 	text-decoration: underline;
 }
-
 @media screen and (max-width: 950px) {
 	#home .hello-text {
 		top: 15%;
@@ -598,22 +613,20 @@ footer a:focus {
 	footer {
 		flex-direction: column-reverse;
 	}
-
 	nav {
 		top: 70px;
 		right: -200px;
 		transition: right 500ms ease-in-out;
 	}
-
 	#nav-icon.open + nav {
 		right: 30px;
 	}
-
 	#nav-icon {
 		display: block;
 		width: 45px;
 		height: 30px;
 		position: fixed;
+
 		transform: rotate(0deg);
 		transition: all .5s ease-in-out;
 		top: 50px;
@@ -636,26 +649,23 @@ footer a:focus {
 	#nav-icon span:nth-child(1) {
 		top: 0px;
 	}
-
 	#nav-icon span:nth-child(2),
 	#nav-icon span:nth-child(3) {
 		top: 10px;
 	}
-
 	#nav-icon span:nth-child(4) {
 		top: 20px;
 	}
-
 	#nav-icon.open span:nth-child(1) {
 		top: 18px;
 		width: 0%;
 		left: 50%;
 	}
-
 	#nav-icon.open span:nth-child(2) {
 		-webkit-transform: rotate(45deg);
 		-moz-transform: rotate(45deg);
 		-o-transform: rotate(45deg);
+
 		transform: rotate(45deg);
 	}
 
@@ -671,7 +681,6 @@ footer a:focus {
 		width: 0%;
 		left: 50%;
 	}
-
 	#projects .projects-container {
 		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 	}

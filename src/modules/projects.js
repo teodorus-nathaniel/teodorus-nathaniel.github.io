@@ -13,7 +13,7 @@ const projects = [
 
 const container = document.getElementById('projects-container');
 
-export default function initProjects (){
+export default function initProjects() {
 	projects.forEach(
 		(project) =>
 			(container.innerHTML += `
