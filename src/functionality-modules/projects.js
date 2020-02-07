@@ -18,7 +18,7 @@ export default function initProjects (){
 		(project) =>
 			(container.innerHTML += `
 				<a href="${project.link}" target="_blank" rel="noreferrer">
-					<img class="project-image placeholder scroll-to-view" src="./img/loading.gif" data-src="${project.imgPath}" alt="${project.name}">
+					<img class="project-image placeholder scroll-to-view" src="./img/placeholder.png" data-src="${project.imgPath}" alt="${project.name}">
 					<div class="project-info">
 						<span class="title">${project.name}</span>
 						<span>Click to visit</span>
