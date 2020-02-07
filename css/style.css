@@ -35,6 +35,15 @@ body {
 	background-color: var(--primary-color-darken);
 }
 
+img.placeholder {
+	filter: blur(10px);
+}
+img.loaded {
+	transition: all 500ms;
+	filter: none;
+	opacity: 1;
+}
+
 #nav-icon {
 	display: none;
 }
@@ -99,6 +108,9 @@ body {
 	opacity: 0;
 	transition: all 500ms ease-out;
 	transform: translateY(50px);
+}
+img.scroll-to-view {
+	transform: none;
 }
 .is-visible {
 	opacity: 1;
@@ -236,17 +248,6 @@ main section {
 #home {
 	width: 100%;
 }
-#home .hello-text {
-	font-size: 36px;
-	font-family: 'Alata';
-	font-weight: bold;
-	color: var(--text-transparent);
-	top: 30%;
-	position: absolute;
-	left: 10%;
-	padding: 15px 30px;
-	background-image: var(--text-background);
-}
 #home #home-background {
 	background: url('../img/background3.jpg') center / cover rgb(25, 25, 25);
 	height: 100%;
@@ -256,14 +257,24 @@ main section {
 body.light-mode #home #home-background {
 	filter: invert(100%);
 }
-#home div.text {
+#home .text {
 	position: absolute;
+	left: 10%;
+	padding: 15px 30px;
+	background-image: var(--text-background);
 	font-family: 'Alata';
+	border-radius: 25px;
+}
+#home .hello-text {
+	top: 30%;
+	font-size: 36px;
+	font-weight: bold;
+	color: var(--text-transparent);
+}
+#home div.intro-text {
 	font-weight: 800;
 	top: 40%;
-	left: 10%;
 	color: white;
-	padding: 15px 30px;
 	background-image: var(--text-background);
 }
 #home div.text p {
@@ -429,11 +440,13 @@ body.light-mode #home #home-background {
 #experiences .experience-container .experience-item .description > * {
 	padding: 10px 0px;
 }
-#experiences .experience-container .experience-item div.image-container {
+#experiences .experience-container .experience-item .image-container {
+	text-align: center;
 	width: 100%;
 	height: 100%;
-	background-size: cover;
-	background-position: center;
+	object-fit: cover;
+	object-position: center;
+	background-color: var(--primary-color-darken);
 	backface-visibility: hidden;
 }
 #canvas-particle {
@@ -490,7 +503,6 @@ body.light-mode #home #home-background {
 	grid-template-columns: 1fr 1fr;
 	gap: 30px 50px;
 }
-
 #skills #skill-container li {
 	display: flex;
 	justify-content: space-between;
@@ -509,7 +521,6 @@ body.light-mode #home #home-background {
 	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 	padding: 0;
 }
-
 #projects .projects-container > a {
 	text-decoration: none;
 	color: white;
@@ -558,8 +569,8 @@ body.light-mode #home #home-background {
 	width: 100%;
 	top: 0;
 	left: 0;
-	background-size: cover;
-	background-position: center;
+	object-fit: cover;
+	object-position: center;
 	transition: transform 1s ease-in-out, filter 1s ease-in-out;
 }
 footer {
@@ -626,7 +637,6 @@ footer a:focus {
 		width: 45px;
 		height: 30px;
 		position: fixed;
-
 		transform: rotate(0deg);
 		transition: all .5s ease-in-out;
 		top: 50px;
@@ -665,17 +675,14 @@ footer a:focus {
 		-webkit-transform: rotate(45deg);
 		-moz-transform: rotate(45deg);
 		-o-transform: rotate(45deg);
-
 		transform: rotate(45deg);
 	}
-
 	#nav-icon.open span:nth-child(3) {
 		-webkit-transform: rotate(-45deg);
 		-moz-transform: rotate(-45deg);
 		-o-transform: rotate(-45deg);
 		transform: rotate(-45deg);
 	}
-
 	#nav-icon.open span:nth-child(4) {
 		top: 18px;
 		width: 0%;
