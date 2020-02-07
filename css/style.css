@@ -36,7 +36,9 @@ body {
 }
 
 img.placeholder {
-	filter: blur(10px);
+	filter: blur(5px);
+	object-fit: none !important;
+	object-position: center;
 }
 img.loaded {
 	transition: all 500ms;
