@@ -41,7 +41,7 @@ img.placeholder {
 	object-position: center;
 }
 img.loaded {
-	transition: all 500ms;
+	transition: filter 500ms;
 	filter: none;
 	opacity: 1;
 }
@@ -73,7 +73,7 @@ img.loaded {
 	align-items: center;
 	background-color: var(--primary-color);
 	border-radius: 50px;
-	transition: all 500ms;
+	transition: box-shadow 500ms, background-color 500ms;
 }
 #color-switch:hover,
 #color-switch:focus {
@@ -90,7 +90,7 @@ img.loaded {
 	background-color: var(--text-color);
 	width: 15px;
 	height: 15px;
-	transition: all 500ms;
+	transition: transform 500ms, background-color 500ms;
 }
 #color-switch.light .circle {
 	transform: translateX(35px);
@@ -108,7 +108,7 @@ img.loaded {
 
 .scroll-to-view {
 	opacity: 0;
-	transition: all 500ms ease-out;
+	transition: transform 500ms ease-out, opacity 500ms;
 	transform: translateY(50px);
 }
 img.scroll-to-view {
@@ -140,7 +140,7 @@ img.scroll-to-view {
 	height: 5px;
 	background-color: var(--text-color);
 	transform: translate(200px, 0);
-	transition: all 500ms;
+	transition: transform 500ms, background-color 500ms, opacity 500ms;
 	transition-delay: 750ms;
 	opacity: 0;
 }
@@ -229,7 +229,7 @@ nav ul li:hover span {
 nav ul li:hover {
 	box-shadow: 0 10px 20px 0 var(--box-shadow-light),
 		0 2px 5px 0 var(--box-shadow-med);
-	transition: all 500ms ease;
+	transition: box-shadow 500ms ease;
 	transition-delay: 250ms;
 }
 nav ul li a:focus {
@@ -401,7 +401,7 @@ body.light-mode #home #home-background {
 #experiences .experience-item-container:hover {
 	box-shadow: 0px 0px 20px 0 var(--box-shadow-med),
 		0px 0px 5px 0 var(--box-shadow-hard);
-	transition: all 500ms;
+	transition: box-shadow 500ms;
 	transition-delay: 300ms;
 }
 #experiences
@@ -425,7 +425,7 @@ body.light-mode #home #home-background {
 	transition: 500ms ease-in-out;
 }
 #experiences .experience-container .experience-item .description {
-	transition: all 500ms ease-out;
+	transition: background-color 500ms ease-out, tranform 500ms ease-in-out;
 	padding: 10px 20px;
 	width: 100%;
 	height: 100%;
@@ -476,7 +476,7 @@ body.light-mode #home #home-background {
 	align-items: center;
 	color: black;
 	box-shadow: 0 0 20px 0 var(--box-shadow-med);
-	transition: all 700ms;
+	transition: box-shadow 700ms;
 }
 #experiences .help-fab:hover {
 	box-shadow: 0 0 20px 0 var(--box-shadow-med),
@@ -488,7 +488,7 @@ body.light-mode #home #home-background {
 	bottom: 175px;
 	opacity: 0;
 	transform: translateY(20px);
-	transition: all 500ms;
+	transition: transform 500ms, opacity 500ms;
 	border-radius: 5px;
 	background-color: rgb(225, 225, 225);
 	color: black;
@@ -516,6 +516,7 @@ body.light-mode #home #home-background {
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;
+	width: 85px;
 }
 /* PROJECTS */
 #projects .projects-container {
@@ -529,7 +530,7 @@ body.light-mode #home #home-background {
 	height: 400px;
 	overflow: hidden;
 	border: 2px solid var(--text-transparent);
-	transition: all 500ms;
+	transition: border 500ms;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -538,6 +539,16 @@ body.light-mode #home #home-background {
 #projects .projects-container > a:focus {
 	border: 2px solid var(--text-color);
 	outline: none;
+}
+#projects .projects-container .project-image {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	object-fit: cover;
+	object-position: center;
+	transition: transform 1s ease-in-out, filter 1s ease-in-out;
 }
 #projects .projects-container > a:hover .project-image,
 #projects .projects-container > a:focus .project-image {
@@ -549,7 +560,7 @@ body.light-mode #home #home-background {
 	height: 100%;
 	clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
 	overflow: hidden;
-	transition: all 500ms;
+	transition: clip-path 500ms;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -564,16 +575,6 @@ body.light-mode #home #home-background {
 #projects .projects-container > a:hover .project-info,
 #projects .projects-container > a:focus .project-info {
 	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-}
-#projects .projects-container .project-image {
-	position: absolute;
-	height: 100%;
-	width: 100%;
-	top: 0;
-	left: 0;
-	object-fit: cover;
-	object-position: center;
-	transition: transform 1s ease-in-out, filter 1s ease-in-out;
 }
 footer {
 	background-image: linear-gradient(
@@ -601,12 +602,12 @@ footer a:focus {
 }
 @media screen and (max-width: 950px) {
 	#home .hello-text {
-		top: 15%;
+		top: 20%;
 		left: 50%;
 		transform: translateX(-50%);
 		text-align: center;
 	}
-	#home div.text {
+	#home div.intro-text {
 		top: 25%;
 		left: 50%;
 		text-align: center;
@@ -640,7 +641,7 @@ footer a:focus {
 		height: 30px;
 		position: fixed;
 		transform: rotate(0deg);
-		transition: all .5s ease-in-out;
+		transition: transform .5s ease-in-out;
 		top: 50px;
 		right: 50px;
 		cursor: pointer;
@@ -656,7 +657,9 @@ footer a:focus {
 		opacity: 1;
 		left: 0;
 		transform: rotate(0deg);
-		transition: .25s ease-in-out;
+		transition: transform .25s ease-in-out, top .25s ease-in-out,
+			left .25s ease-in-out, width .25s ease-in-out, background-color 500ms;
+		background-color: var(--text-color);
 	}
 	#nav-icon span:nth-child(1) {
 		top: 0px;
