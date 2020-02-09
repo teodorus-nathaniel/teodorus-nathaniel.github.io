@@ -696,4 +696,14 @@ footer a:focus {
 	#projects .projects-container {
 		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 	}
+	#projects .projects-container .project-info {
+		transition: opacity 500ms;
+		clip-path: none;
+		opacity: 0;
+	}
+	#projects .projects-container > a:hover .project-info,
+	#projects .projects-container > a:focus .project-info {
+		clip-path: none;
+		opacity: 1;
+	}
 }
