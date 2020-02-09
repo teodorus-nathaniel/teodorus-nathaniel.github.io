@@ -35,6 +35,26 @@ body {
 	background-color: var(--primary-color-darken);
 }
 
+noscript {
+	z-index: 1000;
+}
+.noscript-overlay {
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	flex-direction: column;
+	background-color: rgba(50, 50, 50, .5);
+	justify-content: center;
+	align-items: center;
+	display: flex;
+}
+.noscript-overlay * {
+	color: white;
+	text-align: center;
+}
+
 img.placeholder {
 	filter: blur(5px);
 	object-fit: none !important;
