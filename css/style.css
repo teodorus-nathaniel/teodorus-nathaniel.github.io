@@ -706,4 +706,8 @@ footer a:focus {
 		clip-path: none;
 		opacity: 1;
 	}
+	#projects .projects-container > a:hover .project-image,
+	#projects .projects-container > a:focus .project-image {
+		filter: opacity(.3);
+	}
 }
