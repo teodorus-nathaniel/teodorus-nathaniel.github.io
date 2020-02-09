@@ -710,4 +710,7 @@ footer a:focus {
 	#projects .projects-container > a:focus .project-image {
 		filter: opacity(.3);
 	}
+	.hello-text {
+		padding: 15px 0px !important;
+	}
 }
