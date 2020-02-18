@@ -1,7 +1,22 @@
 const slider = document.getElementById('slider');
 
+const convertScrollToWidth = (scroll) =>
+  scroll / document.body.offsetHeight * window.innerWidth;
+
 export default function initSlider (){
-	window.addEventListener('scroll', () => {
-		slider.style.width = `${(window.scrollY + window.innerHeight) / document.body.offsetHeight * window.innerWidth}px`;
-	});
+  let timeout = null;
+
+  window.addEventListener('scroll', () => {
+    if (!timeout) {
+      timeout = setTimeout(() => {
+        slider.style.width = `${convertScrollToWidth(
+          window.scrollY +
+            window.scrollY /
+              (document.body.offsetHeight - window.innerHeight) *
+              window.innerHeight
+        )}px`;
+        timeout = null;
+      }, 15);
+    }
+  });
 }
