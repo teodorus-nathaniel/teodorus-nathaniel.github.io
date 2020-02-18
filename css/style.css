@@ -150,6 +150,7 @@ img.scroll-to-view {
 }
 .slide-right_2.is-visible {
   transform: translate(0, 0);
+<<<<<<< HEAD
 }
 
 section {
@@ -157,6 +158,8 @@ section {
   top: 0;
   box-shadow: 0px 0px 30px 0px var(--box-shadow-light),
     0px 0px 10px 1px var(--box-shadow-med);
+=======
+>>>>>>> eef51839f44fbd61fbac123023c5947aa2937012
 }
 .section-title span::after {
   content: '';
@@ -276,12 +279,17 @@ main section {
 /* HOME */
 #home {
   width: 100%;
+<<<<<<< HEAD
 }
 #home #home-background {
   background: url('../img/background.jpg') center / cover rgb(25, 25, 25);
   height: 100%;
   width: 100%;
   position: absolute;
+=======
+  background: url('../img/background.jpg') center / cover rgb(25, 25, 25);
+  background-attachment: fixed;
+>>>>>>> eef51839f44fbd61fbac123023c5947aa2937012
 }
 body.light-mode #home #home-background {
   filter: invert(100%);
@@ -598,6 +606,18 @@ body.light-mode #home #home-background {
   margin: 10px 0px;
   font-weight: bolder;
   font-size: 24px;
+<<<<<<< HEAD
+=======
+}
+#projects .projects-container .project-info p {
+  max-width: 50%;
+  text-align: center;
+  color: rgba(255, 255, 255, .6);
+  margin: 10px 0px 20px 0px;
+}
+#projects .projects-container .project-info .click-label {
+  color: rgb(56, 225, 255);
+>>>>>>> eef51839f44fbd61fbac123023c5947aa2937012
 }
 #projects .projects-container > a:hover .project-info,
 #projects .projects-container > a:focus .project-info {
@@ -735,7 +755,11 @@ footer a:focus {
   }
   #projects .projects-container > a:hover .project-image,
   #projects .projects-container > a:focus .project-image {
+<<<<<<< HEAD
     filter: opacity(.3);
+=======
+    filter: opacity(.5);
+>>>>>>> eef51839f44fbd61fbac123023c5947aa2937012
   }
   .hello-text {
     padding: 15px 0px !important;
