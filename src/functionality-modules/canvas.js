@@ -24,7 +24,7 @@ const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
 const pointSize = 1.5;
-const pointCount = 1;
+const pointCount = 50;
 
 let points = Array.from({ length: pointCount }).map(() => new Point());
 
