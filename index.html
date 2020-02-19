@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -12,172 +12,179 @@
     <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
     <meta name="theme-color" content="#0b080c">
 
-    <script src="src/index.js" type="module" defer></script>
-</head>
+    <script src="dist/main.js" defer></script>
+  </head>
 
-<body>
+  <body>
     <noscript>
-        <div class="noscript-overlay">
-            <h1>Your browser does not support JavaScript!</h1>
-            <h2>Please enable Javascript to view the best of this site.</h2>
-        </div>
+      <div class="noscript-overlay">
+        <h1>Your browser does not support JavaScript!</h1>
+        <h2>Please enable Javascript to view the best of this site.</h2>
+      </div>
     </noscript>
     <div class="color-switch-container">
-        <p>Color Mode: </p>
-        <div id="color-switch" class="dark" tabindex="0">
-            <div class="circle"></div>
-        </div>
-        <div id="slider"></div>
+      <p>Color Mode: </p>
+      <div id="color-switch" class="dark" tabindex="0">
+        <div class="circle"></div>
+      </div>
+      <div id="slider"></div>
     </div>
 
     <div id="nav-icon">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
 
     <nav>
-        <ul>
-            <li id="profile-btn" class="goto-profile">
-                <span>Profile</span>
-                <i class="fa fa-user" aria-hidden="true"></i>
-            </li>
-            <li id="experiences-btn" class="goto-experiences">
-                <span>Experiences</span>
-                <i class="fa fa-graduation-cap" aria-hidden="true"></i>
-            </li>
-            <li id="skills-btn" class="goto-skills">
-                <span>Skills</span>
-                <i class="fa fa-cogs" aria-hidden="true"></i>
-            </li>
-            <li id="projects-btn" class="goto-projects">
-                <span>Projects</span>
-                <i class="fa fa-tasks" aria-hidden="true"></i>
-            </li>
-            <li id="about-btn" class="goto-about">
-                <span>About</span>
-                <i class="fa fa-info" aria-hidden="true"></i>
-            </li>
-        </ul>
+      <ul>
+        <li id="profile-btn">
+          <a href="#profile">
+            <span>Profile</span>
+            <i class="fa fa-user" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li id="experiences-btn">
+          <a href="#experiences">
+            <span>Experiences</span>
+            <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li id="skills-btn">
+          <a href="#skills">
+            <span>Skills</span>
+            <i class="fa fa-cogs" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li id="projects-btn">
+          <a href="#projects">
+            <span>Projects</span>
+            <i class="fa fa-tasks" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li id="about-btn">
+          <a href="#about">
+            <span>About</span>
+            <i class="fa fa-info" aria-hidden="true"></i>
+          </a>
+        </li>
+      </ul>
     </nav>
 
     <main>
-        <section id="home">
-            <div class="background-image" id="home-background"></div>
-            <canvas id="canvas"></canvas>
-            <div class="hello-text text">Hi, I am</div>
-            <div class="intro-text text">
-                <p class="scroll-to-view slide-right_1">Teodorus Nathaniel</p>
-                <p class="scroll-to-view slide-right_2">
-                    an Undergraduate Computer Science Student
+      <section id="home">
+        <div class="background-image" id="home-background"></div>
+        <canvas id="canvas"></canvas>
+        <div class="hello-text text">Hi, I am</div>
+        <div class="intro-text text">
+          <p class="scroll-to-view slide-right_1">Teodorus Nathaniel</p>
+          <p class="scroll-to-view slide-right_2">
+            an Undergraduate Computer Science Student
+          </p>
+        </div>
+        <a href="#profile" class='fa fa-angle-down'><i></i></a>
+      </section>
+      <section id='profile' class="common-section">
+        <div class="shapes-background">
+
+        </div>
+        <div class="heading">
+          <h1 class="scroll-to-view slide-right_1 section-title"><span>-- Profile --</span></h1>
+        </div>
+        <ul class="profile-container">
+          <li class="scroll-to-view"><span>Name: </span><span>Teodorus Nathaniel Kurniawan</span></li>
+          <li class="scroll-to-view">
+            <span>Age: </span>
+            <span id="age-label"></span>
+          </li>
+          <li class="scroll-to-view"><span>Job: </span><span>Student and Lab Instructor in Binus
+              University</span>
+          </li>
+          <li class="scroll-to-view"><span>Line: </span><span>nathaniel.kurniawan</span></li>
+          <li class="scroll-to-view"><span>Email: </span><span>nathankurnia26@gmail.com</span></li>
+        </ul>
+        <div>
+          <h2>Reach me by:</h2>
+          <div class="contact">
+            <a href="#"><img src="./img/linkedin.svg" alt="linkedin"></a>
+            <a href="#"><img src="./img/line.svg" alt="line"></a>
+            <a href="#"><img src="./img/gmail.svg" alt="gmail"></a>
+          </div>
+        </div>
+        <a href="#experiences" class='fa fa-angle-down'><i></i></a>
+      </section>
+      <section id='experiences' class="common-section">
+        <canvas id="canvas-particle"></canvas>
+        <div class="help-fab">
+          <i class="fa fa-question"></i>
+        </div>
+        <div class="help-content">
+          <p>Left click to reset animation</p>
+          <p>Press 't' to toggle animation</p>
+        </div>
+        <div class="heading">
+          <h1 class="scroll-to-view slide-right_1 section-title"><span>-- Experiences --</span></h1>
+        </div>
+        <div class="experience-container">
+          <div class="experience-item-container" tabindex="0">
+            <div class="experience-item scroll-to-view">
+              <img data-src="./img/bluejack.jpg" src="./img/placeholder.png" alt="Bluejack"
+                class="image-container placeholder scroll-to-view">
+              <div class="description">
+                <h2>Full Time Lab Assistant</h2>
+                <p>
+                  Becoming a lab assistant at Bina Nusantara University helps me improve myself, both my
+                  soft skills and hard skills
                 </p>
+              </div>
             </div>
-            <i class='fa fa-angle-down goto-profile'></i>
-        </section>
-        <section id='profile' class="common-section">
-            <div class="shapes-background">
+          </div>
+        </div>
+        <a href="#skills" class='fa fa-angle-down'><i></i></a>
+      </section>
+      <section id='skills' class="common-section">
+        <div class="shapes-background">
 
-            </div>
-            <div class="heading">
-                <h1 class="scroll-to-view slide-right_1 section-title"><span>-- Profile --</span></h1>
-            </div>
-            <ul class="profile-container">
-                <li class="scroll-to-view"><span>Name: </span><span>Teodorus Nathaniel Kurniawan</span></li>
-                <li class="scroll-to-view">
-                    <span>Age: </span>
-                    <span id="age-label"></span>
-                </li>
-                <li class="scroll-to-view"><span>Job: </span><span>Student and Lab Instructor in Binus
-                        University</span>
-                </li>
-                <li class="scroll-to-view"><span>Line: </span><span>nathaniel.kurniawan</span></li>
-                <li class="scroll-to-view"><span>Email: </span><span>nathankurnia26@gmail.com</span></li>
-            </ul>
-            <div>
-                <h2>Reach me by:</h2>
-                <div class="contact">
-                    <a href="#"><img src="./img/linkedin.svg" alt="linkedin"></a>
-                    <a href="#"><img src="./img/line.svg" alt="line"></a>
-                    <a href="#"><img src="./img/gmail.svg" alt="gmail"></a>
-                </div>
-            </div>
-            <i class='fa fa-angle-down goto-experiences'></i>
-        </section>
-        <section id='experiences' class="common-section">
-            <canvas id="canvas-particle"></canvas>
-            <div class="help-fab">
-                <i class="fa fa-question"></i>
-            </div>
-            <div class="help-content">
-                <p>Left click to reset animation</p>
-                <p>Press 't' to toggle animation</p>
-            </div>
-            <div class="heading">
-                <h1 class="scroll-to-view slide-right_1 section-title"><span>-- Experiences --</span></h1>
-            </div>
-            <div class="experience-container">
-                <div class="experience-item-container" tabindex="0">
-                    <div class="experience-item scroll-to-view">
-                        <img data-src="./img/bluejack.jpg" src="./img/placeholder.png" alt="Bluejack"
-                            class="image-container placeholder scroll-to-view">
-                        <div class="description">
-                            <h2>Full Time Lab Assistant</h2>
-                            <p>
-                                Becoming a lab assistant at Bina Nusantara University helps me improve myself, both
-                                my
-                                soft skills and hard skills
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <i class='fa fa-angle-down goto-skills'></i>
-        </section>
-        <section id='skills' class="common-section">
-            <div class="shapes-background">
+        </div>
+        <div class="heading">
+          <h1 class="scroll-to-view slide-right_1 section-title"><span>-- Skills --</span></h1>
+        </div>
+        <ul id="skill-container">
 
-            </div>
-            <div class="heading">
-                <h1 class="scroll-to-view slide-right_1 section-title"><span>-- Skills --</span></h1>
-            </div>
-            <ul id="skill-container">
+        </ul>
+        <a href="#projects" class='fa fa-angle-down'><i></i></a>
+      </section>
+      <section class="common-section" id="projects">
+        <div class="shapes-background">
 
-            </ul>
-            <i class='fa fa-angle-down goto-projects'></i>
-        </section>
-        <section class="common-section" id="projects">
-            <div class="shapes-background">
+        </div>
 
-            </div>
+        <div class="heading">
+          <h1 class="scroll-to-view slide-right_1 section-title"><span>-- My Projects --</span></h1>
+        </div>
 
-            <div class="heading">
-                <h1 class="scroll-to-view slide-right_1 section-title"><span>-- My Projects --</span></h1>
-            </div>
+        <div class="projects-container" id="projects-container">
 
-            <div class="projects-container" id="projects-container">
-
-            </div>
-
-            <i class='fa fa-angle-down goto-about'></i>
-        </section>
+        </div>
+      </section>
     </main>
 
     <footer id="about">
-        <div>Copyright &copy; and made by Teodorus Nathaniel Kurniawan</div>
-        <div>
-            <div>Icons made by
-                <a href="https://www.flaticon.com/authors/freepik" title="Freepik" rel="noreferrer">Freepik</a> from
-                <a href=" https://www.flaticon.com/" title="Flaticon" rel="noreferrer">www.flaticon.com</a>
-            </div>
-            <div>Icons made by
-                <a href=" https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect" rel="noreferrer">Pixel
-                    perfect</a> from
-                <a href="https://www.flaticon.com/" title="Flaticon" rel="noreferrer">www.flaticon.com</a>
-            </div>
+      <div>Copyright &copy; and made by Teodorus Nathaniel Kurniawan</div>
+      <div>
+        <div>Icons made by
+          <a href="https://www.flaticon.com/authors/freepik" title="Freepik" rel="noreferrer">Freepik</a> from
+          <a href=" https://www.flaticon.com/" title="Flaticon" rel="noreferrer">www.flaticon.com</a>
         </div>
+        <div>Icons made by
+          <a href=" https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect" rel="noreferrer">Pixel
+            perfect</a> from
+          <a href="https://www.flaticon.com/" title="Flaticon" rel="noreferrer">www.flaticon.com</a>
+        </div>
+      </div>
     </footer>
 
-</body>
+  </body>
 
 </html>
