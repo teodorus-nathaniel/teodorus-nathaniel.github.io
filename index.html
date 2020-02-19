@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
     <meta name="theme-color" content="#0b080c">
 
-    <script src="dist/main.js" defer></script>
+    <script src="src/index.js" type="module" defer></script>
 </head>
 
 <body>
@@ -39,35 +39,25 @@
 
     <nav>
         <ul>
-            <li id="profile-btn">
-                <a href="#profile">
-                    <span>Profile</span>
-                    <i class="fa fa-user" aria-hidden="true"></i>
-                </a>
+            <li id="profile-btn" class="goto-profile">
+                <span>Profile</span>
+                <i class="fa fa-user" aria-hidden="true"></i>
             </li>
-            <li id="experiences-btn">
-                <a href="#experiences">
-                    <span>Experiences</span>
-                    <i class="fa fa-graduation-cap" aria-hidden="true"></i>
-                </a>
+            <li id="experiences-btn" class="goto-experiences">
+                <span>Experiences</span>
+                <i class="fa fa-graduation-cap" aria-hidden="true"></i>
             </li>
-            <li id="skills-btn">
-                <a href="#skills">
-                    <span>Skills</span>
-                    <i class="fa fa-cogs" aria-hidden="true"></i>
-                </a>
+            <li id="skills-btn" class="goto-skills">
+                <span>Skills</span>
+                <i class="fa fa-cogs" aria-hidden="true"></i>
             </li>
-            <li id="projects-btn">
-                <a href="#projects">
-                    <span>Projects</span>
-                    <i class="fa fa-tasks" aria-hidden="true"></i>
-                </a>
+            <li id="projects-btn" class="goto-projects">
+                <span>Projects</span>
+                <i class="fa fa-tasks" aria-hidden="true"></i>
             </li>
-            <li id="about-btn">
-                <a href="#about">
-                    <span>About</span>
-                    <i class="fa fa-info" aria-hidden="true"></i>
-                </a>
+            <li id="about-btn" class="goto-about">
+                <span>About</span>
+                <i class="fa fa-info" aria-hidden="true"></i>
             </li>
         </ul>
     </nav>
@@ -83,7 +73,7 @@
                     an Undergraduate Computer Science Student
                 </p>
             </div>
-            <a href="#profile" class='fa fa-angle-down'><i></i></a>
+            <i class='fa fa-angle-down goto-profile'></i>
         </section>
         <section id='profile' class="common-section">
             <div class="shapes-background">
@@ -112,7 +102,7 @@
                     <a href="#"><img src="./img/gmail.svg" alt="gmail"></a>
                 </div>
             </div>
-            <a href="#experiences" class='fa fa-angle-down'><i></i></a>
+            <i class='fa fa-angle-down goto-experiences'></i>
         </section>
         <section id='experiences' class="common-section">
             <canvas id="canvas-particle"></canvas>
@@ -129,10 +119,7 @@
             <div class="experience-container">
                 <div class="experience-item-container" tabindex="0">
                     <div class="experience-item scroll-to-view">
-                        <img
-                            data-src="./img/bluejack.jpg"
-                            src="./img/placeholder.png"
-                            alt="Bluejack"
+                        <img data-src="./img/bluejack.jpg" src="./img/placeholder.png" alt="Bluejack"
                             class="image-container placeholder scroll-to-view">
                         <div class="description">
                             <h2>Full Time Lab Assistant</h2>
@@ -145,7 +132,7 @@
                     </div>
                 </div>
             </div>
-            <a href="#skills" class='fa fa-angle-down'><i></i></a>
+            <i class='fa fa-angle-down goto-skills'></i>
         </section>
         <section id='skills' class="common-section">
             <div class="shapes-background">
@@ -157,7 +144,7 @@
             <ul id="skill-container">
 
             </ul>
-            <a href="#projects" class='fa fa-angle-down'><i></i></a>
+            <i class='fa fa-angle-down goto-projects'></i>
         </section>
         <section class="common-section" id="projects">
             <div class="shapes-background">
@@ -172,7 +159,7 @@
 
             </div>
 
-            <a class='fa fa-angle-down' href="#about"><i></i></a>
+            <i class='fa fa-angle-down goto-about'></i>
         </section>
     </main>
 
@@ -184,8 +171,7 @@
                 <a href=" https://www.flaticon.com/" title="Flaticon" rel="noreferrer">www.flaticon.com</a>
             </div>
             <div>Icons made by
-                <a href=" https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect"
-                    rel="noreferrer">Pixel
+                <a href=" https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect" rel="noreferrer">Pixel
                     perfect</a> from
                 <a href="https://www.flaticon.com/" title="Flaticon" rel="noreferrer">www.flaticon.com</a>
             </div>

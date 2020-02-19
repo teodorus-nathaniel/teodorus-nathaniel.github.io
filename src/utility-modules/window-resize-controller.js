@@ -7,8 +7,8 @@ window.addEventListener('resize', () => {
 	});
 });
 
-export default function autoRescaleComponent (component){
-	component.width = window.innerWidth;
-	component.height = window.innerHeight;
+export default function autoRescaleComponent(component) {
+	component.width = document.documentElement.clientWidth;
+	component.height = document.documentElement.clientHeight;
 	componentsToRescale.push(component);
 }
