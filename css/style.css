@@ -383,6 +383,15 @@ body.light-mode #home::after {
   padding: 10px 0px;
   border-bottom: 1px solid var(--text-color);
 }
+#profile .profile-container li span {
+  text-align: right;
+}
+#profile .profile-container li span:first-child {
+  color: var(--text-transparent);
+}
+#profile .profile-container li span:last-child {
+  font-weight: 800;
+}
 #profile .profile-container li > span:first-child {
   font-style: oblique;
 }
@@ -651,6 +660,9 @@ footer a:focus {
 @media screen and (max-width: 650px) {
   #profile .profile-container li {
     flex-direction: column;
+  }
+  #profile .profile-container li span {
+    text-align: center;
   }
   #skills #skill-container {
     grid-template-columns: 1fr;
