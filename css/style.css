@@ -124,6 +124,7 @@ img.loaded {
   color: var(--text-color);
   font-size: 5em;
   text-decoration: none;
+  padding: 0 !important;
 }
 
 .scroll-to-view {
@@ -256,7 +257,9 @@ nav ul li a:focus {
   outline: none;
 }
 nav ul li a:focus i {
-  outline: 1px solid var(--text-color);
+  outline: 3px solid rgb(79, 79, 255);
+  outline-style: double;
+  outline-offset: 1px;
 }
 main section {
   min-height: 100vh;
