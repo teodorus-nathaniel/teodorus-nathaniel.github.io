@@ -1,0 +1,39 @@
+main div.content {
+  position: relative;
+  height: 700px;
+  min-height: calc(100vh - 94px - 114px);
+}
+
+main div.content img {
+  object-fit: cover;
+  object-position: center;
+  max-height: 100%;
+  width: 100%;
+}
+
+main div.content h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3em;
+}
+
+main div.actions {
+  text-transform: uppercase;
+  display: flex;
+}
+
+main div.actions div {
+  cursor: pointer;
+  text-align: center;
+  padding: 40px 0px;
+  font-size: 2em;
+  flex: 1;
+  background-color: #d9b986;
+  transition: background-color 300ms ease-out;
+}
+
+main div.actions div:hover {
+  background-color: #fffdf1;
+}
