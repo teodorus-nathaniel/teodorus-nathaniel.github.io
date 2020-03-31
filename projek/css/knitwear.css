@@ -5,6 +5,7 @@ nav {
 nav ul li.logo {
   font-size: 2em !important;
   padding: 10px 20px;
+  color: rgb(67, 44, 35);
 }
 
 main {
@@ -52,4 +53,5 @@ main div span {
   font-size: 1.5em;
   z-index: 2;
   font-weight: bold;
+  color: rgb(67, 44, 35);
 }
