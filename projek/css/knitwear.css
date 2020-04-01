@@ -9,7 +9,6 @@ nav ul li.logo {
 }
 
 main {
-  background-color: #fffdf1;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   gap: 60px 30px;

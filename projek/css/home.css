@@ -1,3 +1,12 @@
+nav {
+  background-color: #d9b986;
+}
+
+nav ul li.logo {
+  font-size: 5em;
+  padding: 0px 20px;
+}
+
 main div.content {
   position: relative;
   height: 700px;
