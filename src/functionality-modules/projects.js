@@ -27,6 +27,14 @@ const projects = [
     description: 'Simple othello game',
     link: 'https://othelloo.herokuapp.com',
     linkCode: 'https://github.com/teodorus-nathaniel/Othello'
+  },
+  {
+    name: 'RHackeTS',
+    imgPath: './../img/RHackets.png',
+    description: 'A mobile app to keep track of badminton matches',
+    link:
+      'https://play.google.com/store/apps/details?id=edu.bluejack19_1.rhackets',
+    linkCode: 'https://github.com/reidoja/RHackets'
   }
 ];
 
