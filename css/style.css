@@ -228,6 +228,7 @@ nav ul li a {
 }
 nav ul li span {
   padding: 10px 20px;
+  z-index: -1;
   flex: 1;
   background-color: #0c0f12;
   border-radius: 1px 0px 0px 5px;
@@ -559,7 +560,7 @@ body.light-mode #home::after {
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   padding: 0;
 }
-#projects .projects-container > a {
+#projects .projects-container > div {
   text-decoration: none;
   color: white;
   height: 400px;
@@ -570,8 +571,8 @@ body.light-mode #home::after {
   justify-content: center;
   align-items: center;
 }
-#projects .projects-container > a:hover,
-#projects .projects-container > a:focus {
+#projects .projects-container > div:hover,
+#projects .projects-container > div:focus {
   border: 2px solid var(--text-color);
   outline: none;
 }
@@ -585,8 +586,8 @@ body.light-mode #home::after {
   object-position: center;
   transition: transform 1s ease-in-out, filter 1s ease-in-out;
 }
-#projects .projects-container > a:hover .project-image,
-#projects .projects-container > a:focus .project-image {
+#projects .projects-container > div:hover .project-image,
+#projects .projects-container > div:focus .project-image {
   filter: blur(2px);
   transform: scale(1.1);
 }
@@ -616,9 +617,27 @@ body.light-mode #home::after {
 #projects .projects-container .project-info .click-label {
   color: rgb(56, 225, 255);
 }
-#projects .projects-container > a:hover .project-info,
-#projects .projects-container > a:focus .project-info {
+#projects .projects-container > div:hover .project-info,
+#projects .projects-container > div:focus .project-info {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+#projects .projects-container > div .project-info a {
+  text-decoration: none;
+}
+#projects .projects-container > div .project-info a::after {
+  content: '';
+  transition: transform 300ms ease-out;
+  width: calc(100% + 10px);
+  position: absolute;
+  bottom: -2px;
+  left: -5px;
+  height: 1px;
+  background-color: rgb(56, 225, 255);
+  transform: scaleX(0);
+}
+#projects .projects-container > div .project-info a:hover::after,
+#projects .projects-container > div .project-info a:focus::after {
+  transform: scaleX(1);
 }
 footer {
   background-image: linear-gradient(
