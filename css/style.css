@@ -27,8 +27,10 @@
 }
 html {
   scroll-behavior: smooth;
+  width: 100%;
 }
 body {
+  width: 100%;
   font-family: "Dosis", sans-serif;
   overflow-x: hidden;
   min-height: 100vh;
@@ -162,7 +164,7 @@ img.scroll-to-view {
   width: 40%;
   height: 5px;
   background-color: var(--text-color);
-  transform: translate(200px, 0);
+  transform: translate(50px, 0);
   transition: transform 500ms, background-color 500ms, opacity 500ms;
   transition-delay: 750ms;
   opacity: 0;
@@ -733,11 +735,12 @@ footer a:focus {
   }
   nav {
     top: 70px;
-    right: -200px;
-    transition: right 500ms ease-in-out;
+    right: 30px;
+    transition: transform 500ms ease-in-out;
+    transform: translateX(200px);
   }
   #nav-icon.open + nav {
-    right: 30px;
+    transform: translateX(0);
   }
   #nav-icon {
     display: block;
