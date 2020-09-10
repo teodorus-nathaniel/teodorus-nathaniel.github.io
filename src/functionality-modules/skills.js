@@ -8,11 +8,11 @@ const data = [
     rating: 4.5,
   },
   {
-    name: 'Node JS',
+    name: 'Typescript',
     rating: 4.5,
   },
   {
-    name: 'Typescript',
+    name: 'Node JS',
     rating: 4,
   },
   {
@@ -27,7 +27,7 @@ const data = [
 
 const skillContainer = document.getElementById('skill-container');
 
-export default function initSkills (){
+export default function initSkills() {
   data.forEach((skill) => {
     let stars = Array.from({ length: skill.rating }).reduce(
       (prev) => prev + '<i class="fa fa-star"></i>',

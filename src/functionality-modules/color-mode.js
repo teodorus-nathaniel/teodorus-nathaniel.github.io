@@ -27,9 +27,10 @@ const lightModeOptions = {
   textBackground:
     'radial-gradient(farthest-side at center, rgba(200, 200, 200, 1), rgba(200, 200, 200, .7) 80%, rgba(200, 200, 200, .1))',
   textTransparent: 'rgba(50, 50, 50, .7)',
+  primaryRgb: '217, 219, 210',
 };
 
-function changeMode (colorOptions){
+function changeMode(colorOptions) {
   const rootStyle = document.documentElement.style;
   rootStyle.setProperty('--primary-color', colorOptions.primaryColor);
   rootStyle.setProperty(
@@ -50,9 +51,10 @@ function changeMode (colorOptions){
   rootStyle.setProperty('--box-shadow-hard', colorOptions.boxShadowHard);
   rootStyle.setProperty('--text-background', colorOptions.textBackground);
   rootStyle.setProperty('--text-transparent', colorOptions.textTransparent);
+  rootStyle.setProperty('--primary-color-rgb', colorOptions.primaryRgb);
 }
 
-export default function initColorSwitch (){
+export default function initColorSwitch() {
   colorSwitch.addEventListener('click', () => {
     if (isDarkMode) {
       document.body.classList.add('light-mode');
@@ -68,7 +70,7 @@ export default function initColorSwitch (){
     isDarkMode = !isDarkMode;
   });
 
-  colorSwitch.addEventListener('keypress', function (e){
+  colorSwitch.addEventListener('keypress', function (e) {
     if (e.key === 'Enter') this.click();
   });
 }
