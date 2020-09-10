@@ -802,16 +802,16 @@ footer a:focus {
   }
   #projects .projects-container .project-info {
     transition: opacity 500ms;
-    clip-path: none;
-    opacity: 0;
+    clip-path: none !important;
+    opacity: 0 !important;
   }
-  #projects .projects-container > a:hover .project-info,
-  #projects .projects-container > a:focus .project-info {
-    clip-path: none;
-    opacity: 1;
+  #projects .projects-container > div:hover .project-info,
+  #projects .projects-container > div:focus .project-info {
+    clip-path: none !important;
+    opacity: 1 !important;
   }
-  #projects .projects-container > a:hover .project-image,
-  #projects .projects-container > a:focus .project-image {
+  #projects .projects-container > div:hover .project-image,
+  #projects .projects-container > div:focus .project-image {
     filter: opacity(0.5);
   }
   .hello-text {
