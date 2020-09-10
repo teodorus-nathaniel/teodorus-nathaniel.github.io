@@ -337,14 +337,14 @@ body.light-mode #home::after {
   border-radius: 25px;
 }
 #home .hello-text {
-  top: 30%;
+  top: 25%;
   font-size: 36px;
   font-weight: bold;
   color: var(--text-transparent);
 }
 #home div.intro-text {
   font-weight: 800;
-  top: 40%;
+  top: 35%;
   color: white;
   background-image: var(--text-background);
 }
