@@ -1,7 +1,7 @@
 const projects = [
   {
     name: "BPNN Visualizer",
-    imgPath: "./../img/bpnn.png",
+    imgPath: "./../img/bpnn-visualizer.png",
     description:
       "Visualization of Back Propagation Neural Network using PIXI.js and GSAP",
     link: "https://bpnn-visualizer.herokuapp.com",
