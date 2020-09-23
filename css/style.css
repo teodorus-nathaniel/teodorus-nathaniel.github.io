@@ -27,9 +27,11 @@
 }
 html {
   scroll-behavior: smooth;
+  width: 100%;
 }
 body {
-  font-family: 'Dosis', sans-serif;
+  width: 100%;
+  font-family: "Dosis", sans-serif;
   overflow-x: hidden;
   min-height: 100vh;
   letter-spacing: 2px;
@@ -155,14 +157,14 @@ img.scroll-to-view {
 }
 
 .section-title span::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -10px;
   left: 30%;
   width: 40%;
   height: 5px;
   background-color: var(--text-color);
-  transform: translate(200px, 0);
+  transform: translate(50px, 0);
   transition: transform 500ms, background-color 500ms, opacity 500ms;
   transition-delay: 750ms;
   opacity: 0;
@@ -189,7 +191,6 @@ img.scroll-to-view {
 .btn {
   margin-top: 8px;
   font-size: 1em;
-  font-weight: bold;
   padding: 0.8em 1.25em;
   background-color: RGBA(var(--primary-color-rgb), 0.5);
   border: 2px solid var(--text-color);
@@ -200,11 +201,12 @@ img.scroll-to-view {
 }
 
 .btn > span {
+  font-weight: bold;
   z-index: 10;
 }
 
 .btn::after {
-  content: '';
+  content: "";
   background-color: var(--text-transparent);
   width: 100%;
   height: 100%;
@@ -313,14 +315,14 @@ main section {
   width: 100%;
 }
 #home::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   z-index: -1;
   width: 100vw;
   height: 100%;
-  background: url('../img/background.jpg') center / cover rgb(25, 25, 25);
+  background: url("../img/background.jpg") center / cover rgb(25, 25, 25);
   background-attachment: fixed;
 }
 body.light-mode #home::after {
@@ -331,18 +333,18 @@ body.light-mode #home::after {
   left: 10%;
   padding: 15px 30px;
   background-image: var(--text-background);
-  font-family: 'Alata';
+  font-family: "Alata";
   border-radius: 25px;
 }
 #home .hello-text {
-  top: 30%;
+  top: 25%;
   font-size: 36px;
   font-weight: bold;
   color: var(--text-transparent);
 }
 #home div.intro-text {
   font-weight: 800;
-  top: 40%;
+  top: 35%;
   color: white;
   background-image: var(--text-background);
 }
@@ -663,7 +665,7 @@ body.light-mode #home::after {
   text-decoration: none;
 }
 #projects .projects-container > div .project-info a::after {
-  content: '';
+  content: "";
   transition: transform 300ms ease-out;
   width: calc(100% + 10px);
   position: absolute;
@@ -719,6 +721,10 @@ footer a:focus {
   }
 }
 @media screen and (max-width: 650px) {
+  .color-switch-container {
+    bottom: 30px;
+    left: 30px;
+  }
   #profile .profile-container li {
     flex-direction: column;
   }
@@ -733,11 +739,12 @@ footer a:focus {
   }
   nav {
     top: 70px;
-    right: -200px;
-    transition: right 500ms ease-in-out;
+    right: 10px;
+    transition: transform 500ms ease-in-out;
+    transform: translateX(200px);
   }
   #nav-icon.open + nav {
-    right: 30px;
+    transform: translateX(0);
   }
   #nav-icon {
     display: block;
@@ -746,8 +753,8 @@ footer a:focus {
     position: fixed;
     transform: rotate(0deg);
     transition: transform 0.5s ease-in-out;
-    top: 50px;
-    right: 50px;
+    right: 30px;
+    top: 30px;
     cursor: pointer;
     z-index: 999;
   }
@@ -802,16 +809,16 @@ footer a:focus {
   }
   #projects .projects-container .project-info {
     transition: opacity 500ms;
-    clip-path: none;
-    opacity: 0;
+    clip-path: none !important;
+    opacity: 0 !important;
   }
-  #projects .projects-container > a:hover .project-info,
-  #projects .projects-container > a:focus .project-info {
-    clip-path: none;
-    opacity: 1;
+  #projects .projects-container > div:hover .project-info,
+  #projects .projects-container > div:focus .project-info {
+    clip-path: none !important;
+    opacity: 1 !important;
   }
-  #projects .projects-container > a:hover .project-image,
-  #projects .projects-container > a:focus .project-image {
+  #projects .projects-container > div:hover .project-image,
+  #projects .projects-container > div:focus .project-image {
     filter: opacity(0.5);
   }
   .hello-text {
