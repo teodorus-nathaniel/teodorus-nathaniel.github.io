@@ -818,3 +818,11 @@ footer a:focus {
     padding: 15px 0px !important;
   }
 }
+
+.github-icon {
+  filter: invert(100%);
+}
+
+body.light-mode .github-icon {
+  filter: none;
+}
