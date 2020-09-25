@@ -1,53 +1,59 @@
 const projects = [
   {
-    name: "BPNN Visualizer",
-    imgPath: "./../img/bpnn-visualizer.png",
+    name: 'BPNN Visualizer',
+    imgPath: './../img/bpnn-visualizer.png',
     description:
-      "Visualization of Back Propagation Neural Network using PIXI.js and GSAP",
-    link: "https://bpnn-visualizer.herokuapp.com",
-    linkCode: "https://github.com/teodorus-nathaniel/bpnn-visualizer"
+      'Visualization of Back Propagation Neural Network using PIXI.js and GSAP',
+    link: 'https://bpnn-visualizer.herokuapp.com',
+    linkCode: 'https://github.com/teodorus-nathaniel/bpnn-visualizer',
   },
   {
-    name: "UIGram",
-    imgPath: "./../img/uigram.png",
+    name: 'Watuku',
+    imgPath: './../img/watuku.png',
+    description: 'Frontend Webapp for Multi-Level Marketing (MLM) Business',
+    link: 'https://www.watuku.net/',
+  },
+  {
+    name: 'UIGram',
+    imgPath: './../img/uigram.png',
     description:
-      "A web application to create social media community for UI design",
-    link: "https://uigram.herokuapp.com",
-    linkCode: "https://github.com/teodorus-nathaniel/uigram"
+      'A web application to create social media community for UI design',
+    link: 'https://uigram.herokuapp.com',
+    linkCode: 'https://github.com/teodorus-nathaniel/uigram',
   },
   {
-    name: "UIGram API",
-    imgPath: "./../img/uigram-api.jpg",
-    description: "API made for UIGram",
-    link: "https://uigram-api.herokuapp.com",
-    linkCode: "https://github.com/teodorus-nathaniel/uigram-api"
+    name: 'UIGram API',
+    imgPath: './../img/uigram-api.jpg',
+    description: 'API made for UIGram',
+    link: 'https://uigram-api.herokuapp.com',
+    linkCode: 'https://github.com/teodorus-nathaniel/uigram-api',
   },
   {
-    name: "FootbalLeague",
-    imgPath: "./../img/pwa.png",
+    name: 'FootbalLeague',
+    imgPath: './../img/pwa.png',
     description:
-      "Football match information using third-party api with progressive web app (PWA)",
-    link: "https://footballeague.herokuapp.com",
-    linkCode: "https://github.com/teodorus-nathaniel/DicodingSubmission3PWA"
+      'Football match information using third-party api with progressive web app (PWA)',
+    link: 'https://footballeague.herokuapp.com',
+    linkCode: 'https://github.com/teodorus-nathaniel/DicodingSubmission3PWA',
   },
   {
-    name: "Othello",
-    imgPath: "./../img/othello.jpg",
-    description: "Simple othello game",
-    link: "https://othelloo.herokuapp.com",
-    linkCode: "https://github.com/teodorus-nathaniel/Othello"
+    name: 'Othello',
+    imgPath: './../img/othello.jpg',
+    description: 'Simple othello game',
+    link: 'https://othelloo.herokuapp.com',
+    linkCode: 'https://github.com/teodorus-nathaniel/Othello',
   },
   {
-    name: "RHackeTS",
-    imgPath: "./../img/RHackets.png",
-    description: "A mobile app to keep track of badminton matches",
+    name: 'RHackeTS',
+    imgPath: './../img/RHackets.png',
+    description: 'A mobile app to keep track of badminton matches',
     link:
-      "https://play.google.com/store/apps/details?id=edu.bluejack19_1.rhackets",
-    linkCode: "https://github.com/reidoja/RHackets"
-  }
+      'https://play.google.com/store/apps/details?id=edu.bluejack19_1.rhackets',
+    linkCode: 'https://github.com/reidoja/RHackets',
+  },
 ];
 
-const container = document.getElementById("projects-container");
+const container = document.getElementById('projects-container');
 
 export default function initProjects() {
   projects.forEach(
@@ -72,7 +78,7 @@ export default function initProjects() {
                 href="${project.linkCode}">
                 Click to see code
               </a>`
-                : ""
+                : ''
             }
 					</div>
 				</div>
