@@ -9,7 +9,7 @@ const projects = [
   },
   {
     name: 'Watuku',
-    imgPath: './../img/watuku.png',
+    imgPath: './../img/watuku.PNG',
     description: 'Frontend Webapp for Multi-Level Marketing (MLM) Business',
     link: 'https://www.watuku.net/',
   },
