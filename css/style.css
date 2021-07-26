@@ -825,6 +825,17 @@ footer a:focus {
   .hello-text {
     padding: 15px 0px !important;
   }
+
+  #experiences .experience-container {
+    flex-direction: column;
+    padding: 15px;
+    align-items: center;
+  }
+  #experiences .experience-container .experience-item-container {
+    margin: 10px 0;
+    width: 100%;
+    max-width: 400px;
+  }
 }
 
 .github-icon {
