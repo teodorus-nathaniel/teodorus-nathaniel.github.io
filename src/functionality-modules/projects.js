@@ -4,6 +4,7 @@ const projects = [
     imgPath: './../img/athea.png',
     description: 'Frontend Landing Pages for Athea Creative Business',
     link: 'https://atheavisuals.com',
+    altLink: 'https://athea.vercel.app',
     linkCode: 'https://github.com/teodorus-nathaniel/athea',
   },
   {
@@ -76,6 +77,11 @@ export default function initProjects() {
 						<a target="_blank" rel="noreferrer" class="click-label" href="${
               project.link
             }">Click to visit</a>
+            ${project.altLink ? `
+              <a target="_blank" rel="noreferrer" class="click-label" href="${
+                project.altLink
+              }">Alt Link</a>
+            ` : ''}
             ${
               project.linkCode
                 ? `<a

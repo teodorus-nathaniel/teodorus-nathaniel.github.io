@@ -675,6 +675,7 @@ body.light-mode #home::after {
 }
 #projects .projects-container > div .project-info a {
   text-decoration: none;
+  margin-bottom: 5px;
 }
 #projects .projects-container > div .project-info a::after {
   content: "";
