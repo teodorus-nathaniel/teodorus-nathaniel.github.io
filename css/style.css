@@ -425,21 +425,31 @@ body.light-mode #home::after {
   display: flex;
   margin: 5px 0px;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
   padding: 10px 0px;
   border-bottom: 1px solid var(--text-color);
 }
 #profile .profile-container li span {
   text-align: right;
 }
-#profile .profile-container li span:first-child {
+#profile .profile-container li > *:first-child {
   color: var(--text-transparent);
 }
-#profile .profile-container li span:last-child {
+#profile .profile-container li > *:last-child {
   font-weight: 800;
 }
-#profile .profile-container li > span:first-child {
+#profile .profile-container li > *:first-child {
   font-style: oblique;
+}
+#profile .profile-content {
+  display: flex;
+  flex-direction: column;
+}
+#profile .profile-content > * {
+  padding-bottom: 5px;
+}
+#profile .profile-content > *:last-child {
+  padding-bottom: 0;
 }
 #profile .contact {
   display: flex;
