@@ -74,7 +74,6 @@ img.loaded {
 }
 
 .color-switch-container {
-  cursor: pointer;
   position: fixed;
   bottom: 50px;
   left: 50px;
@@ -88,6 +87,7 @@ img.loaded {
   margin: 10px 0;
 }
 #color-switch {
+  cursor: pointer;
   padding: 5px;
   box-shadow: 0px 0px 20px 0 var(--box-shadow-light),
     0px 0px 5px 0 var(--box-shadow-med);
