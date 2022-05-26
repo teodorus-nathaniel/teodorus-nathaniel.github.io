@@ -74,6 +74,7 @@ img.loaded {
 }
 
 .color-switch-container {
+  cursor: pointer;
   position: fixed;
   bottom: 50px;
   left: 50px;
