@@ -1,5 +1,12 @@
 const projects = [
   {
+    name: 'Athea',
+    imgPath: './../img/athea.png',
+    description: 'Frontend Landing Pages for Athea Creative Business',
+    link: 'https://atheavisuals.com',
+    linkCode: 'https://github.com/teodorus-nathaniel/athea',
+  },
+  {
     name: 'BPNN Visualizer',
     imgPath: './../img/bpnn-visualizer.png',
     description:
