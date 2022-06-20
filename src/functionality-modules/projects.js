@@ -19,7 +19,7 @@ const projects = [
     imgPath: './../img/bpnn-visualizer.png',
     description:
       'Visualization of Back Propagation Neural Network using PIXI.js and GSAP',
-    link: 'https://bpnn-visualizer.herokuapp.com',
+    link: '/projects/bpnn-visualizer',
     linkCode: 'https://github.com/teodorus-nathaniel/bpnn-visualizer',
   },
   {
