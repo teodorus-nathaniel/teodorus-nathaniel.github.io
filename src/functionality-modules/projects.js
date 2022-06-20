@@ -33,7 +33,7 @@ const projects = [
     imgPath: './../img/uigram.png',
     description:
       'A web application to create social media community for UI design',
-    link: 'https://uigram.herokuapp.com',
+    link: '/projects/uigram',
     linkCode: 'https://github.com/teodorus-nathaniel/uigram',
   },
   {
