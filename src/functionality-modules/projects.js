@@ -8,6 +8,13 @@ const projects = [
     linkCode: 'https://github.com/teodorus-nathaniel/athea',
   },
   {
+    name: 'SOM Visualizer',
+    imgPath: './../img/som-visualizer.png',
+    description: 'Visualization of Self Organizing Map AI using svelte',
+    link: '/projects/som-visualizer',
+    linkCode: 'https://github.com/teodorus-nathaniel/som-visualizer',
+  },
+  {
     name: 'BPNN Visualizer',
     imgPath: './../img/bpnn-visualizer.png',
     description:

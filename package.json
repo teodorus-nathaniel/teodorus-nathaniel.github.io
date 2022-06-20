@@ -1,0 +1,25 @@
+{
+  "name": "teodorus-nathaniel.github.io",
+  "version": "1.0.0",
+  "description": "This project is made purely with html, css, js without any third party library (except webpack for bundling). To run this project, you need to have `webpack` and `webpack-cli` installed globally. To serve the HTML, it is recommended using live server extension from vscode (ritwickdey.LiveServer), but any file serving utility can work just fine (eg. `serve` package)",
+  "main": "index.js",
+  "scripts": {
+    "start": "serve .",
+    "build": "webpack --mode=production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/teodorus-nathaniel/teodorus-nathaniel.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/teodorus-nathaniel/teodorus-nathaniel.github.io/issues"
+  },
+  "homepage": "https://github.com/teodorus-nathaniel/teodorus-nathaniel.github.io#readme",
+  "devDependencies": {
+    "serve": "^13.0.2",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0"
+  }
+}
