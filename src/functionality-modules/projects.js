@@ -55,7 +55,7 @@ const projects = [
     name: 'Othello',
     imgPath: './../img/othello.jpg',
     description: 'Simple othello game',
-    link: 'https://othelloo.herokuapp.com',
+    link: '/projects/othello',
     linkCode: 'https://github.com/teodorus-nathaniel/Othello',
   },
   {
