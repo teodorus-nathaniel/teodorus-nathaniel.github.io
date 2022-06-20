@@ -48,7 +48,7 @@ const projects = [
     imgPath: './../img/pwa.png',
     description:
       'Football match information using third-party api with progressive web app (PWA)',
-    link: 'https://footballeague.herokuapp.com',
+    link: '/projects/footballeague',
     linkCode: 'https://github.com/teodorus-nathaniel/DicodingSubmission3PWA',
   },
   {
