@@ -1,5 +1,18 @@
 const projects = [
   {
+    name: 'Subsocial Substrate StackExchange',
+    imgPath: './../img/substrate-stackexchange.png',
+    description: 'StackExchange for Substrate devs made with Subsocial. 2nd place winner of Polkadot NA Hackaton in Interfaces and Experiences Category',
+    link: 'https://substrate-stackexchange.vercel.app',
+    linkCode: 'https://github.com/teodorus-nathaniel/substrate-stackexchange',
+  },
+  {
+    name: 'Subsocial Substrate StackExchange',
+    imgPath: './../img/subquery.png',
+    description: 'Indexing service for Subsocial Substrate StackExchange to calculate each wallet\'s reputation from their on-chain activity. Made using Subquery Network',
+    linkCode: 'https://github.com/teodorus-nathaniel/subsocial-subql',
+  },
+  {
     name: 'Athea',
     imgPath: './../img/athea.png',
     description: 'Frontend Landing Pages for Athea Creative Business',
