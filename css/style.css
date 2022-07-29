@@ -656,12 +656,13 @@ body.light-mode #home::after {
   background-color: rgba(0, 0, 0, 0.4);
 }
 #projects .projects-container .project-info .title {
-  margin: 10px 0px;
+  margin: 10px 15px;
+  text-align: center;
   font-weight: bolder;
   font-size: 24px;
 }
 #projects .projects-container .project-info p {
-  max-width: 50%;
+  max-width: 75%;
   text-align: center;
   color: rgba(255, 255, 255, 0.6);
   margin: 10px 0px 20px 0px;
