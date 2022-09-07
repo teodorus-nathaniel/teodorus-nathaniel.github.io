@@ -539,6 +539,12 @@ body.light-mode #home::after {
   background-color: var(--primary-color-darken);
   backface-visibility: hidden;
 }
+#experiences .experience-container .experience-item .image-container.contain {
+  object-fit: contain;
+}
+#experiences .experience-container .experience-item .image-container.transparent {
+  background-color: transparent;
+}
 #canvas-particle {
   position: absolute;
   top: 0;
