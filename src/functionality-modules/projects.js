@@ -1,5 +1,12 @@
 const projects = [
   {
+    name: 'Kode Kampus',
+    imgPath: './../img/kodekampus.png',
+    description: 'A platform to learn programming',
+    link: 'https://kodekampus.id',
+    altLink: 'https://kodekampus.vercel.app',
+  },
+  {
     name: 'Athea',
     imgPath: './../img/athea.png',
     description: 'Frontend Landing Pages for Athea Creative Business',
@@ -55,13 +62,12 @@ const projects = [
     name: 'RHackeTS',
     imgPath: './../img/RHackets.png',
     description: 'A mobile app to keep track of badminton matches',
-    link:
-      'https://play.google.com/store/apps/details?id=edu.bluejack19_1.rhackets',
+    link: 'https://play.google.com/store/apps/details?id=edu.bluejack19_1.rhackets',
     linkCode: 'https://github.com/reidoja/RHackets',
   },
-];
+]
 
-const container = document.getElementById('projects-container');
+const container = document.getElementById('projects-container')
 
 export default function initProjects() {
   projects.forEach(
@@ -77,11 +83,13 @@ export default function initProjects() {
 						<a target="_blank" rel="noreferrer" class="click-label" href="${
               project.link
             }">Click to visit</a>
-            ${project.altLink ? `
-              <a target="_blank" rel="noreferrer" class="click-label" href="${
-                project.altLink
-              }">Alt Link</a>
-            ` : ''}
+            ${
+              project.altLink
+                ? `
+              <a target="_blank" rel="noreferrer" class="click-label" href="${project.altLink}">Alt Link</a>
+            `
+                : ''
+            }
             ${
               project.linkCode
                 ? `<a
@@ -96,5 +104,5 @@ export default function initProjects() {
 					</div>
 				</div>
 			`)
-  );
+  )
 }
