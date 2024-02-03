@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Othelloo</title>
+  <link rel="stylesheet" href="./othello.styles.css">
+  <script src="./js/othello.js" type="module" defer></script>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#30323D">
+</head>
+
+<body>
+  <noscript>
+    <div class="noscript-overlay">
+      <h1>Your browser does not support JavaScript!</h1>
+      <h2>Please enable Javascript to play othello.</h2>
+    </div>
+  </noscript>
+
+  <div class="overlay">
+    <div class="white-overlay"></div>
+    <div class="black-overlay"></div>
+  </div>
+
+  <div id="skip-overlay">
+    <h1>You can't overturn any pin!</h1>
+    <h2>Skipping your turn...</h2>
+  </div>
+
+  <div id="win-overlay" class="hide">
+    <div>
+      <h1><span id="player-win">WHITE</span> Wins!</h1>
+      <h2><span id="black-count-win">20</span> : <span id="white-count-win">20</span></h2>
+
+      <button id="restart-btn">New Game</button>
+    </div>
+  </div>
+
+  <div class="game-container">
+
+    <div class="mobile-players-container">
+      <div class="player-container black-container">
+        <span class="player">BLACK</span>
+        <p>Score: <span id="mobile-black-count"></span></p>
+      </div>
+      <div class="player-container white-container">
+        <span class="player">WHITE</span>
+        <p>Score: <span id="mobile-white-count"></span></p>
+      </div>
+    </div>
+
+    <div class="player-container black-container">
+      <span class="player">BLACK</span>
+      <p>Score: <span id="black-count"></span></p>
+    </div>
+
+    <div class="othello-board-container">
+      <div class="othello-board" id="othello-board">
+        <div class='row-tiles'>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+        </div>
+        <div class='row-tiles'>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+        </div>
+        <div class='row-tiles'>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+        </div>
+        <div class='row-tiles'>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+        </div>
+        <div class='row-tiles'>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+        </div>
+        <div class='row-tiles'>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+        </div>
+        <div class='row-tiles'>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+        </div>
+        <div class='row-tiles'>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="player-container white-container">
+      <span class="player">WHITE</span>
+      <p>Score: <span id="white-count"></span></p>
+    </div>
+
+  </div>
+</body>
+
+</html>
