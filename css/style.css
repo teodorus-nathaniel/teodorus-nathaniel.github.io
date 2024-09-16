@@ -5,6 +5,7 @@
   --primary-color-darken: #0c0c0c;
   --primary-color-darken-gradient: #0c0c11;
   --text-color: #ffffff;
+  --text-muted: #f0f0f0;
   --box-shadow-light: rgba(200, 200, 200, 0.1);
   --box-shadow-med: rgba(200, 200, 200, 0.4);
   --box-shadow-hard: rgba(200, 200, 200, 0.7);
@@ -606,8 +607,8 @@ body.light-mode #home::after {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  border-bottom: 1px dotted var(--text-color);
+  padding: 10px 12px;
+  border-bottom: 1px dotted grey;
 }
 #skills #skill-container .rating-bar {
   display: flex;
