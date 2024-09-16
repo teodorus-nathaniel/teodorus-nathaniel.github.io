@@ -1,10 +1,16 @@
 const projects = [
   {
+    name: 'Tanka Watches',
+    imgPath: './../img/tanka.png',
+    description: 'A platform to learn programming',
+    link: 'https://tankawatches.com',
+    altLink: 'https://tanka.vercel.app',
+  },
+  {
     name: 'Kode Kampus',
     imgPath: './../img/kodekampus.png',
     description: 'A platform to learn programming',
-    link: 'https://kodekampus.id',
-    altLink: 'https://kodekampus.vercel.app',
+    link: 'https://kodekampus.vercel.app',
   },
   {
     name: 'Subsocial StackExchange',
@@ -25,7 +31,6 @@ const projects = [
     name: 'Athea',
     imgPath: './../img/athea.png',
     description: 'Frontend Landing Pages for Athea Creative Business',
-    link: 'https://atheavisuals.com',
     altLink: 'https://athea.vercel.app',
     linkCode: 'https://github.com/teodorus-nathaniel/athea',
   },
@@ -48,21 +53,18 @@ const projects = [
     name: 'Watuku',
     imgPath: './../img/watuku.PNG',
     description: 'Frontend Webapp for Multi-Level Marketing (MLM) Business',
-    link: 'https://www.watuku.net/',
   },
   {
     name: 'UIGram',
     imgPath: './../img/uigram.png',
     description:
       'A web application to create social media community for UI design',
-    link: 'https://uigram.herokuapp.com',
     linkCode: 'https://github.com/teodorus-nathaniel/uigram',
   },
   {
     name: 'UIGram API',
     imgPath: './../img/uigram-api.jpg',
     description: 'API made for UIGram',
-    link: 'https://uigram-api.herokuapp.com',
     linkCode: 'https://github.com/teodorus-nathaniel/uigram-api',
   },
   {
@@ -96,20 +98,28 @@ export default function initProjects() {
     (project) =>
       (container.innerHTML += `
 				<div>
-					<img class="project-image placeholder scroll-to-view" src="./img/placeholder.png" data-src="${
+          <img class="project-image-bg placeholder scroll-to-view" src="${
+            project.imgPath
+          }" alt="">
+          <img class="project-image placeholder scroll-to-view" src="./img/placeholder.png" data-src="${
             project.imgPath
           }" alt="${project.name}">
 					<div class="project-info">
 						<span class="title">${project.name}</span>
 						<p>${project.description}</p>
-						<a target="_blank" rel="noreferrer" class="click-label" href="${
-              project.link
-            }">Click to visit</a>
             ${
-              project.altLink
+              project.link
                 ? `
-              <a target="_blank" rel="noreferrer" class="click-label" href="${project.altLink}">Alt Link</a>
-            `
+              <a target="_blank" rel="noreferrer" class="click-label" href="${
+                project.link
+              }">Click to visit</a>
+              ${
+                project.altLink
+                  ? `
+                <a target="_blank" rel="noreferrer" class="click-label" href="${project.altLink}">Alt Link</a>
+              `
+                  : ''
+              }`
                 : ''
             }
             ${
