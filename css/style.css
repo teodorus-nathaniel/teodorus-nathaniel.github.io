@@ -5,6 +5,7 @@
   --primary-color-darken: #0c0c0c;
   --primary-color-darken-gradient: #0c0c11;
   --text-color: #ffffff;
+  --text-color-rgb: 255, 255, 255;
   --text-muted: #f0f0f0;
   --box-shadow-light: rgba(200, 200, 200, 0.1);
   --box-shadow-med: rgba(200, 200, 200, 0.4);
@@ -72,6 +73,11 @@ img.loaded {
 
 #nav-icon {
   display: none;
+}
+
+.alata {
+  font-family: 'Alata';
+  font-weight: bold;
 }
 
 .color-switch-container {
@@ -191,7 +197,6 @@ img.scroll-to-view {
 }
 
 .btn {
-  margin-top: 8px;
   font-size: 1em;
   padding: 0.8em 1.25em;
   background-color: RGBA(var(--primary-color-rgb), 0.5);
@@ -200,6 +205,12 @@ img.scroll-to-view {
   cursor: pointer;
   overflow: hidden;
   transition: color 300ms ease-out;
+}
+
+.btn-primary {
+  background-color: rgba(var(--text-color-rgb), 0.7);
+  border: 2px solid var(--text-color);
+  color: var(--primary-color);
 }
 
 .btn > span {
@@ -385,6 +396,12 @@ body.light-mode #home::after {
   to {
     transform: translate(-50%, 0px);
   }
+}
+.home-buttons {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+  gap: 16px;
 }
 .common-section {
   padding: 50px 0px;
