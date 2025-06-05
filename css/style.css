@@ -496,8 +496,10 @@ body.light-mode #home::after {
 #experiences .experience-container {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   align-items: flex-start;
   border: 1px solid var(--text-color);
+  row-gap: 20px;
 }
 #experiences .experience-container .experience-item-container {
   width: 400px;

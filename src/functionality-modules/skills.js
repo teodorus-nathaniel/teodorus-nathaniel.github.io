@@ -1,31 +1,31 @@
 const data = [
   {
     name: 'Typescript',
-    rating: 4.5,
+    rating: 5,
   },
   {
     name: 'React JS',
-    rating: 4.5,
+    rating: 5,
   },
   {
     name: 'Next JS',
+    rating: 5,
+  },
+  {
+    name: 'Svelte',
+    rating: 5,
+  },
+  {
+    name: 'Node JS',
+    rating: 5,
+  },
+  {
+    name: 'Solidity',
     rating: 4.5,
   },
   {
     name: 'GraphQL',
     rating: 4.5,
-  },
-  {
-    name: 'Node JS',
-    rating: 4.5,
-  },
-  {
-    name: 'Svelte',
-    rating: 4.5,
-  },
-  {
-    name: 'Python',
-    rating: 4,
   },
   {
     name: 'Laravel',
