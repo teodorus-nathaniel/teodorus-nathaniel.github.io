@@ -1,5 +1,5 @@
 const OthelloPin = (color) => {
-	return `
+  return `
     <div class="circle ${color}">
       <div class="black"></div>
       <div class="white"></div>

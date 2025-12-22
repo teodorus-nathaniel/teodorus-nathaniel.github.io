@@ -35,15 +35,15 @@ function changeMode(colorOptions) {
   rootStyle.setProperty('--primary-color', colorOptions.primaryColor);
   rootStyle.setProperty(
     '--primary-color-gradient',
-    colorOptions.primaryColorGradient
+    colorOptions.primaryColorGradient,
   );
   rootStyle.setProperty(
     '--primary-color-darken',
-    colorOptions.primaryColorDarken
+    colorOptions.primaryColorDarken,
   );
   rootStyle.setProperty(
     '--primary-color-darken-gradient',
-    colorOptions.primaryColorDarkenGradient
+    colorOptions.primaryColorDarkenGradient,
   );
   rootStyle.setProperty('--text-color', colorOptions.textColor);
   rootStyle.setProperty('--box-shadow-light', colorOptions.boxShadowLight);

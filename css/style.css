@@ -96,7 +96,8 @@ img.loaded {
 #color-switch {
   cursor: pointer;
   padding: 5px;
-  box-shadow: 0px 0px 20px 0 var(--box-shadow-light),
+  box-shadow:
+    0px 0px 20px 0 var(--box-shadow-light),
     0px 0px 5px 0 var(--box-shadow-med);
   width: 60px;
   height: 30px;
@@ -104,16 +105,21 @@ img.loaded {
   align-items: center;
   background-color: var(--primary-color);
   border-radius: 50px;
-  transition: box-shadow 500ms, background-color 500ms;
+  transition:
+    box-shadow 500ms,
+    background-color 500ms;
 }
 #color-switch:hover,
 #color-switch:focus {
-  box-shadow: 0px 0px 20px 0 var(--box-shadow-med),
+  box-shadow:
+    0px 0px 20px 0 var(--box-shadow-med),
     0px 0px 5px 0 var(--box-shadow-hard);
 }
 #color-switch:focus {
-  box-shadow: 0px 0px 20px 0 var(--box-shadow-med),
-    0px 0px 5px 0 var(--box-shadow-hard), 0px 0px 0px 2px var(--text-color);
+  box-shadow:
+    0px 0px 20px 0 var(--box-shadow-med),
+    0px 0px 5px 0 var(--box-shadow-hard),
+    0px 0px 0px 2px var(--text-color);
   outline: none;
 }
 #color-switch .circle {
@@ -121,7 +127,9 @@ img.loaded {
   background-color: var(--text-color);
   width: 15px;
   height: 15px;
-  transition: transform 500ms, background-color 500ms;
+  transition:
+    transform 500ms,
+    background-color 500ms;
 }
 #color-switch.light .circle {
   transform: translateX(35px);
@@ -140,7 +148,9 @@ img.loaded {
 
 .scroll-to-view {
   opacity: 0;
-  transition: transform 500ms ease-out, opacity 500ms;
+  transition:
+    transform 500ms ease-out,
+    opacity 500ms;
   transform: translateY(50px);
 }
 img.scroll-to-view {
@@ -173,7 +183,10 @@ img.scroll-to-view {
   height: 5px;
   background-color: var(--text-color);
   transform: translate(50px, 0);
-  transition: transform 500ms, background-color 500ms, opacity 500ms;
+  transition:
+    transform 500ms,
+    background-color 500ms,
+    opacity 500ms;
   transition-delay: 750ms;
   opacity: 0;
 }
@@ -302,7 +315,8 @@ nav ul li:hover span {
   transform: rotateY(0deg);
 }
 nav ul li:hover {
-  box-shadow: 0 10px 20px 0 var(--box-shadow-light),
+  box-shadow:
+    0 10px 20px 0 var(--box-shadow-light),
     0 2px 5px 0 var(--box-shadow-med);
   transition: box-shadow 500ms ease;
   transition-delay: 250ms;
@@ -507,7 +521,8 @@ body.light-mode #home::after {
   margin: 0 10px;
 }
 #experiences .experience-item-container:hover {
-  box-shadow: 0px 0px 20px 0 var(--box-shadow-med),
+  box-shadow:
+    0px 0px 20px 0 var(--box-shadow-med),
     0px 0px 5px 0 var(--box-shadow-hard);
   transition: box-shadow 500ms;
   transition-delay: 300ms;
@@ -533,7 +548,9 @@ body.light-mode #home::after {
   transition: 500ms ease-in-out;
 }
 #experiences .experience-container .experience-item .description {
-  transition: background-color 500ms ease-out, tranform 500ms ease-in-out;
+  transition:
+    background-color 500ms ease-out,
+    tranform 500ms ease-in-out;
   padding: 10px 20px;
   width: 100%;
   height: 100%;
@@ -596,7 +613,8 @@ body.light-mode #home::after {
   transition: box-shadow 700ms;
 }
 #experiences .help-fab:hover {
-  box-shadow: 0 0 20px 0 var(--box-shadow-med),
+  box-shadow:
+    0 0 20px 0 var(--box-shadow-med),
     0 0px 5px 0 var(--box-shadow-hard);
 }
 #experiences .help-content {
@@ -605,11 +623,14 @@ body.light-mode #home::after {
   bottom: 175px;
   opacity: 0;
   transform: translateY(20px);
-  transition: transform 500ms, opacity 500ms;
+  transition:
+    transform 500ms,
+    opacity 500ms;
   border-radius: 5px;
   background-color: rgb(225, 225, 225);
   color: black;
-  box-shadow: 0 0 20px 0 var(--box-shadow-med),
+  box-shadow:
+    0 0 20px 0 var(--box-shadow-med),
     0 0px 5px 0 var(--box-shadow-hard);
 }
 #experiences .help-fab:hover + .help-content {
@@ -668,7 +689,9 @@ body.light-mode #home::after {
   object-fit: cover;
   object-position: center;
   filter: blur(12px);
-  transition: transform 1s ease-in-out, filter 1s ease-in-out;
+  transition:
+    transform 1s ease-in-out,
+    filter 1s ease-in-out;
 }
 #projects .projects-container .project-image {
   position: absolute;
@@ -679,7 +702,9 @@ body.light-mode #home::after {
   left: 0;
   object-fit: contain;
   object-position: center;
-  transition: transform 1s ease-in-out, filter 1s ease-in-out;
+  transition:
+    transform 1s ease-in-out,
+    filter 1s ease-in-out;
 }
 #projects .projects-container > div:hover .project-image,
 #projects .projects-container > div:focus .project-image {
@@ -827,8 +852,12 @@ footer a:focus {
     opacity: 1;
     left: 0;
     transform: rotate(0deg);
-    transition: transform 0.25s ease-in-out, top 0.25s ease-in-out,
-      left 0.25s ease-in-out, width 0.25s ease-in-out, background-color 500ms;
+    transition:
+      transform 0.25s ease-in-out,
+      top 0.25s ease-in-out,
+      left 0.25s ease-in-out,
+      width 0.25s ease-in-out,
+      background-color 500ms;
     background-color: var(--text-color);
   }
   #nav-icon span:nth-child(1) {

@@ -1,9 +1,9 @@
 const slider = document.getElementById('slider');
 
 const convertScrollToWidth = (scroll) =>
-  scroll / document.body.offsetHeight * window.innerWidth;
+  (scroll / document.body.offsetHeight) * window.innerWidth;
 
-export default function initSlider (){
+export default function initSlider() {
   let timeout = null;
 
   window.addEventListener('scroll', () => {
@@ -11,9 +11,9 @@ export default function initSlider (){
       timeout = setTimeout(() => {
         slider.style.width = `${convertScrollToWidth(
           window.scrollY +
-            window.scrollY /
-              (document.body.offsetHeight - window.innerHeight) *
-              window.innerHeight
+            (window.scrollY /
+              (document.body.offsetHeight - window.innerHeight)) *
+              window.innerHeight,
         )}px`;
         timeout = null;
       }, 15);

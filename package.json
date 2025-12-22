@@ -7,7 +7,8 @@
     "start": "serve .",
     "dev": "npm-run-all -l -p dev-build start",
     "dev-build": "webpack --watch --mode=development",
-    "build": "webpack --mode=production"
+    "build": "webpack --mode=production",
+    "format": "prettier --write ."
   },
   "repository": {
     "type": "git",

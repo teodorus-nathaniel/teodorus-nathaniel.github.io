@@ -31,9 +31,9 @@ const data = [
     name: 'Laravel',
     rating: 4,
   },
-]
+];
 
-const skillContainer = document.getElementById('skill-container')
+const skillContainer = document.getElementById('skill-container');
 
 export default function initSkills() {
   data.forEach((skill) => {
@@ -43,7 +43,7 @@ export default function initSkills() {
 					<li class="scroll-to-view">
 							<span>${skill.name}</span>
 					</li>
-					`
-    )
-  })
+					`,
+    );
+  });
 }

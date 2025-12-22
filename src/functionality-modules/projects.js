@@ -89,9 +89,9 @@ const projects = [
     link: 'https://play.google.com/store/apps/details?id=edu.bluejack19_1.rhackets',
     linkCode: 'https://github.com/reidoja/RHackets',
   },
-]
+];
 
-const container = document.getElementById('projects-container')
+const container = document.getElementById('projects-container');
 
 export default function initProjects() {
   projects.forEach(
@@ -135,6 +135,6 @@ export default function initProjects() {
             }
 					</div>
 				</div>
-			`)
-  )
+			`),
+  );
 }
