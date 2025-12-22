@@ -1,7 +1,7 @@
 # Project Overview
 
 This project is made purely with html, css, js without _any_ third party library
-(except webpack for bundling). To run this project, you need to::
+(except webpack for bundling). To run this project, you need to:::
 
 1. `npm i`
 2. `npm run build`
