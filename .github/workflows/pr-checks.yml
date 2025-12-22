@@ -7,7 +7,3 @@ on:
 jobs:
   checks:
     uses: teodorus-nathaniel/personal-actions/.github/workflows/pr-checks.yml@main
-    with:
-      run-prettier: false
-      run-markdown: false
-      run-commits: false
